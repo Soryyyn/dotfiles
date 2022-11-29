@@ -1,0 +1,13 @@
+os:
+  editCommand: "$VISUAL"
+customCommands:
+  - key: "<c-c>"
+    command: "code ."
+    context: "global"
+    description: "Open the current repo in VSCode"
+gui:
+  branchColors:
+    "feature": "green"
+    "feat": "green"
+    "fix": "#f06832"
+    "hotfix": "#f06832"
