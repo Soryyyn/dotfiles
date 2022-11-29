@@ -1,1 +1,1 @@
-![my dotfiles](https://media.tenor.com/vHsAI2ZzL8gAAAAC/shrek-what-are-you-doing-in-my-swamp.gif)
+![my dotfiles](https://thumbs.gfycat.com/WarmheartedHappygoluckyAkitainu-size_restricted.gif)
