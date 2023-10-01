@@ -12,4 +12,5 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+-- load the plugins from the plugins file
 require("lazy").setup("soryn.plugins")

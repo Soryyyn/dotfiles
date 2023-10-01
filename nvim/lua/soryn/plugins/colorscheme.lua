@@ -5,12 +5,12 @@ return {
     config = function()
         require("github-theme").setup({
             options = {
-                hide_end_of_buffer = false,     -- hide "~" on line
+                hide_end_of_buffer = true,      -- hide "~" on line
                 transparent = true,             -- paint bg
                 inverse = {                     -- inverse colors
-                    match_paren = true,
+                    match_paren = false,
                     visual = true,
-                    search = true,
+                    search = false,
                 },
                 styles = {                      -- set font styling based on word
                     comments = "italic",
@@ -19,6 +19,6 @@ return {
             }
         })
 
-        vim.cmd("colorscheme github_dark_high_contrast")
+        vim.cmd("colorscheme github_dark")
     end,
 }

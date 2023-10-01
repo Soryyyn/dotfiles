@@ -1,6 +1,7 @@
 -- line numbers with relative & absolute number on current line
 vim.opt.number = true
 vim.opt.relativenumber = true
+vim.opt.fillchars = { eob = ' ' }
 
 -- tabs & indent
 vim.opt.tabstop = 4
@@ -33,3 +34,6 @@ vim.opt.splitbelow = true
 
 -- consider "-" as part of the word
 vim.opt.iskeyword:append("-")
+
+-- update time for refreshing files
+vim.opt.updatetime = 100
