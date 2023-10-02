@@ -2,6 +2,9 @@
 vim.opt.number = true
 vim.opt.relativenumber = true
 
+-- scroll offset (make sure amount of lines are always around the cursor)
+vim.opt.scrolloff = 8
+
 -- tabs & indent
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
@@ -24,7 +27,7 @@ vim.opt.signcolumn = "yes"
 -- backspace
 vim.opt.backspace = "indent,eol,start"
 
--- clipboard
+-- clipboard (use OS clipboard)
 vim.opt.clipboard:append("unnamedplus")
 
 -- splitting
@@ -36,3 +39,6 @@ vim.opt.iskeyword:append("-")
 
 -- update time for refreshing files
 vim.opt.updatetime = 100
+
+-- make sure string (``) is visible in .md
+vim.opt.conceallevel = 0
