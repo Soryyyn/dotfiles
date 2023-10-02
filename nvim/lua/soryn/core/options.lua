@@ -25,7 +25,7 @@ vim.opt.signcolumn = "yes"
 vim.opt.backspace = "indent,eol,start"
 
 -- clipboard
-vim.opt.clipboard = "unnamedplus"
+vim.opt.clipboard:append("unnamedplus")
 
 -- splitting
 vim.opt.splitright = true
