@@ -1,7 +1,6 @@
 -- line numbers with relative & absolute number on current line
 vim.opt.number = true
 vim.opt.relativenumber = true
-vim.opt.fillchars = { eob = ' ' }
 
 -- tabs & indent
 vim.opt.tabstop = 4
