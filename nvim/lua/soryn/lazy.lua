@@ -13,4 +13,17 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- load the plugins from the plugins file
-require("lazy").setup("soryn.plugins")
+require("lazy").setup({
+  {import = "soryn.plugins"}
+}, {
+  install = {
+    colorscheme = {"github_dark"}
+  },
+  checker = {
+    enabled = true,
+    notify = false
+  },
+  change_detection = {
+    notify = false
+  }
+})
