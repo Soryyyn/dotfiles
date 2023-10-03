@@ -7,5 +7,10 @@ return {
         vim.o.timeoutlen = 300
       end,
       opts = {}
+    },
+    {
+      "numToStr/Comment.nvim",
+      event = { "BufReadPre", "BufNewFile" },
+      opts = {}
     }
 }
