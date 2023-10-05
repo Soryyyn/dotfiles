@@ -13,7 +13,6 @@ return {
     require("nvim-tree").setup({
       disable_netrw = true,
       hijack_cursor = true,
-      hijack_unnamed_buffer_when_opening = true,
       open_on_tab = false,
       update_focused_file = {
         enable = true,
