@@ -13,3 +13,7 @@ vim.keymap.set("n", "<tab>", "<cmd>BufferLineCycleNext<CR>", { desc = "Next buff
 vim.keymap.set("n", "<S-tab>", "<cmd>BufferLineCyclePrev<CR>", { desc = "Previos buffer", silent = true }) 
 vim.keymap.set("n", "<leader>wx", "<cmd>bd<CR>", { desc = "Close current buffer", silent = true })
 vim.keymap.set("n", "<leader>wp", "<cmd>BufferLinePick<CR>", { desc = "Pick from open buffers", silent = true })
+vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<CR>", { desc = "Find files" })
+vim.keymap.set("n", "<leader>fl", "<cmd>Telescope live_grep<CR>", { desc = "Find with grep" })
+vim.keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<CR>", { desc = "Find open buffers" })
+vim.keymap.set("n", "<leader>fg", "<cmd>Telescope git_files<CR>", { desc = "Find git files" })
