@@ -14,10 +14,12 @@ vim.opt.rtp:prepend(lazypath)
 
 -- load the plugins from the plugins file
 require("lazy").setup({
-  {import = "soryn.plugins"}
+  {
+    import = "soryn.plugins"
+  }
 }, {
   install = {
-    colorscheme = {"github_dark"}
+    colorscheme = { "carbonfox" }
   },
   checker = {
     enabled = true,
