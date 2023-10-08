@@ -9,6 +9,7 @@ return {
                 module_default = true,
                 inverse = { -- inverse colors
                     match_paren = false,
+                    cursor = true,
                     visual = true,
                     search = false,
                 },

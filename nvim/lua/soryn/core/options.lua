@@ -42,3 +42,6 @@ vim.opt.updatetime = 100
 
 -- make sure string (``) is visible in .md
 vim.opt.conceallevel = 0
+
+-- don't show "-- INSERT --" in command bar
+vim.opt.showmode = false

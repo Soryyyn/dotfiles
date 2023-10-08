@@ -1,6 +1,6 @@
 return {
     {
-      "folke/which-key.nvim",
+      "folke/which-key.nvim", -- show popup for shortcut help
       event = "VeryLazy",
       init = function()
         vim.o.timeout = true
@@ -9,8 +9,12 @@ return {
       opts = {}
     },
     {
-      "numToStr/Comment.nvim",
+      "numToStr/Comment.nvim", -- comment out lines/blocks easier
       event = { "BufReadPre", "BufNewFile" },
       opts = {}
     },
+    {
+        "stevearc/dressing.nvim", -- make input use telescope for better ui
+        event = "VeryLazy"
+    }
 }
