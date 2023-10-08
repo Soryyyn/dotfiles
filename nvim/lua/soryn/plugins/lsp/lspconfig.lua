@@ -9,8 +9,7 @@ return {
         local lspconfig = require("lspconfig")
         local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
-
-        local on_attach = function(client, bufnr)
+        local on_attach = function(_, bufnr)
             -- keybinds
             vim.keymap.set("n", "gr", "<cmd>Telescope lsp_references<CR>", { desc = "Show references", noremap = true, silent = true, buffer = bufnr })
             vim.keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<CR>", { desc = "Show definition(s)", noremap = true, silent = true, buffer = bufnr })
@@ -60,58 +59,5 @@ return {
                 })
             end
         })
-
-
-        -- -- html lang server
-        -- lspconfig["html"].setup({
-        --     capabilities = capabilities,
-        --     on_attach = on_attach
-        -- })
-        --
-        -- -- css lang server
-        -- lspconfig["cssls"].setup({
-        --     capabilities = capabilities,
-        --     on_attach = on_attach
-        -- })
-        --
-        -- -- tailwindcss lang serve
-        -- lspconfig["tailwindcss"].setup:({
-        --     capabilities = capabilities,
-        --     on_attach = on_attach
-        -- })
-        --
-        -- -- emmet lang server
-        -- lspconfig["emmet_ls"].setup({
-        --     capabilities = capabilities,
-        --     on_attach = on_attach,
-        --     filetypes = {
-        --         "html",
-        --         "javascriptreact",
-        --         "typescriptreact",
-        --         "css",
-        --         "sass",
-        --         "scss",
-        --         "less"
-        --     }
-        -- })
-        --
-        -- -- lua lang server (with vim settings)
-        -- lspconfig["lua_ls"].setup({
-        --     capabilities = capabilities,
-        --     on_attach = on_attach,
-        --     settings = {
-        --         Lua = {
-        --             diagnostics = {
-        --                 globals = { "vim" }
-        --             },
-        --             workspace = {
-        --                 library = {
-        --                     [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-        --                     [vim.fn.stdpath("config") .. "/lua"] = true
-        --                 }
-        --             }
-        --         }
-        --     }
-        -- })
     end
 }
