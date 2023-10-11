@@ -58,5 +58,11 @@ return {
               },
             })
         end
+    },
+    {
+        "kdheepak/lazygit.nvim", -- lazygit inside neovim
+        dependencies = {
+            "nvim-lua/plenary.nvim"
+        }
     }
 }

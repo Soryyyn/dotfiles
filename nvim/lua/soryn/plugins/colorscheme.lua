@@ -8,8 +8,7 @@ return {
                 terminal_colors = true,
                 module_default = true,
                 inverse = { -- inverse colors
-                    match_paren = false,
-                    cursor = true,
+                    match_paren = true,
                     visual = true,
                     search = false,
                 },
@@ -18,7 +17,7 @@ return {
                     keywords = "bold",
                     types = "italic,bold"
                 },
-            }
+            },
         })
 
         vim.cmd("colorscheme carbonfox")
