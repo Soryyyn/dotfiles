@@ -22,6 +22,9 @@ return {
 
         local capabilities = cmp_nvim_lsp.default_capabilities() -- used for autocompletion
 
+        -- better signatures
+        require("lsp_signature").setup({})
+
         -- change diagnostic icons in gutter
         local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
         for type, icon in pairs(signs) do

@@ -13,7 +13,7 @@ return {
         local cmp = require("cmp")
         local luasnip = require("luasnip")
         local lspkind = require("lspkind")
-        
+
         -- load friendly snippets from plugins
         require("luasnip.loaders.from_vscode").lazy_load()
 
@@ -38,7 +38,7 @@ return {
                 ["<C-q>"] = cmp.mapping.abort(), -- close cmp
                 ["<CR>"] = cmp.mapping.confirm({ select = false }),
             }),
-        
+
             -- cmp sources
             sources = cmp.config.sources({
                 { name = "nvim_lsp" }, -- lsp
@@ -51,7 +51,6 @@ return {
             formatting = {
                 format = lspkind.cmp_format({
                     maxwidth = 50,
-                    maxheight = 30,
                     ellipsis_char = "...",
                 })
             },

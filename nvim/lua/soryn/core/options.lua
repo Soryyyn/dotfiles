@@ -45,3 +45,6 @@ vim.opt.conceallevel = 0
 
 -- don't show "-- INSERT --" in command bar
 vim.opt.showmode = false
+
+-- cmp amount of items
+vim.opt.pumheight = 15

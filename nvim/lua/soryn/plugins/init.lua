@@ -61,8 +61,16 @@ return {
     },
     {
         "kdheepak/lazygit.nvim", -- lazygit inside neovim
+        event = "VeryLazy",
         dependencies = {
             "nvim-lua/plenary.nvim"
         }
+    },
+    {
+        "ray-x/lsp_signature.nvim",
+        event = "VeryLazy",
+        config = function()
+            require("lsp_signature").setup({})
+        end
     }
 }

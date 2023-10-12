@@ -21,6 +21,9 @@ return {
                         init_selection = "<C-Space>",
                         node_incremental = "<C-Space>",
                     }
+                },
+                autotag = {
+                    enable = true
                 }
             })
         end
