@@ -48,3 +48,6 @@ vim.opt.showmode = false
 
 -- cmp amount of items
 vim.opt.pumheight = 15
+
+-- enable autoformat
+vim.g.autoformat = true

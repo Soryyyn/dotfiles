@@ -7,17 +7,26 @@ return {
             options = {
                 terminal_colors = true,
                 module_default = true,
+                hide_end_of_buffer = false,
                 inverse = { -- inverse colors
-                    match_paren = true,
+                    match_paren = false,
                     visual = true,
                     search = false,
                 },
                 styles = { -- set font styling based on word
                     comments = "italic",
-                    keywords = "bold",
-                    types = "italic,bold"
                 },
             },
+            groups = {
+                all = {
+                    illuminatedWordRead = {
+                        bg = "bg2"
+                    },
+                    illuminatedWordWrite = {
+                        bg = "bg2"
+                    },
+                }
+            }
         })
 
         vim.cmd("colorscheme carbonfox")

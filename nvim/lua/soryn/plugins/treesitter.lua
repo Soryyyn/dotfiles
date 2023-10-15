@@ -1,8 +1,13 @@
 return {
     {
         "nvim-treesitter/nvim-treesitter",
-        lazy = false,
+        event = "VeryLazy",
         build = ":TSUpdate",
+        dependencies = {
+            "nvim-treesitter/playground",
+            "JoosepAlviste/nvim-ts-context-commentstring"
+        },
+        cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
         config = function()
             require("nvim-treesitter.configs").setup({
                 ensure_installed = {"lua", "typescript", "javascript", "html", "json", "markdown"}, -- make sure the following parser are installed
@@ -13,7 +18,6 @@ return {
                 },
                 highlight = {
                     enable = true,
-                    additional_vim_regex_highlighting = false
                 },
                 incremental_selection = { -- increment selection of syntax
                     enable = true,
@@ -26,6 +30,14 @@ return {
                     enable = true
                 }
             })
+
+            -- commenting in mixed frontend context
+            require("ts_context_commentstring").setup({})
         end
+    },
+    {
+        "windwp/nvim-ts-autotag", -- auto edit html tags based on treesitter context
+        event = "InsertEnter",
+        opts = {}
     }
 }
