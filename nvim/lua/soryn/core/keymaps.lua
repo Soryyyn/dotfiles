@@ -43,3 +43,13 @@ vim.keymap.set("n", "<C-Right>", "<C-w><", { desc = "Decrease window height", no
 -- better indenting
 vim.keymap.set("v", "<", "<gv")
 vim.keymap.set("v", ">", ">gv")
+
+-- increment & decrement number with plus and minus
+vim.keymap.set("n", "+", "<C-a>")
+vim.keymap.set("n", "-", "<C-x>")
+
+-- move lines/blocks
+vim.keymap.set("n", "<M-k>", "<cmd>MoveLine 1<CR>", { desc = "Move line up", silent = true, noremap = true })
+vim.keymap.set("n", "<M-j>", "<cmd>MoveLine -1<CR>", { desc = "Move line down", silent = true, noremap = true })
+vim.keymap.set("v", "<M-k>", ":MoveBlock 1<CR>", { desc = "Move block up", silent = true, noremap = true })
+vim.keymap.set("v", "<M-j>", ":MoveBlock -1<CR>", { desc = "Move block down", silent = true, noremap = true })

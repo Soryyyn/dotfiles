@@ -4,7 +4,8 @@ return {
         event = { "BufReadPre", "BufNewFile" },
         dependencies = {
             "mason.nvim",
-            "williamboman/mason-lspconfig.nvim"
+            "williamboman/mason-lspconfig.nvim",
+            "ray-x/lsp_signature.nvim"
         },
         opts = {
             diagnostics = {
@@ -31,6 +32,13 @@ return {
                 vim.keymap.set("n", "gt", "<cmd>Telescope lsp_type_definitions<CR>", { desc = "Show type definitions", noremap = true, silent = true, buffer = bufnr })
                 vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "See available code actions", noremap = true, silent = true, buffer = bufnr })
                 vim.keymap.set("n" ,"K", vim.lsp.buf.hover, { desc = "Show doc for what is under cursor", noremap = true, silent = true, buffer = bufnr })
+
+                -- attach function signature help
+                require("lsp_signature").on_attach({
+                    floating_window_above_cur_line = false,
+                    floating_window = false,
+                    hint_prefix = " ",
+                }, bufnr)
             end
 
             -- change diagnostic icons in gutter
@@ -87,5 +95,5 @@ return {
         config = function(_, opts)
             require("mason").setup(opts)
         end
-    }
+    },
 }

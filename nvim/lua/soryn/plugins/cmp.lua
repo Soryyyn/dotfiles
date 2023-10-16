@@ -9,7 +9,8 @@ return {
             "hrsh7th/cmp-path",
             "saadparwaiz1/cmp_luasnip",
             "L3MON4D3/LuaSnip",
-            "rafamadriz/friendly-snippets"
+            "rafamadriz/friendly-snippets",
+            "onsails/lspkind.nvim"
         },
         opts = function()
             local cmp = require("cmp")
@@ -42,6 +43,13 @@ return {
                 }, {
                     { name = "buffer" }
                 }),
+                formatting = {
+                    format = require("lspkind").cmp_format({
+                        mode = "symbol_text",
+                        maxwidth = 35,
+                        ellipsis_char = "..."
+                    })
+                },
                 sorting = default_cmp_settings.sorting
             }
         end,

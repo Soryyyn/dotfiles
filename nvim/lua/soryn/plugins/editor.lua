@@ -81,5 +81,15 @@ return {
 
             illuminate.configure(opts)
         end
+    },
+    {
+        "ggandor/leap.nvim", -- text jumping (even better than easymotion)
+        config = function()
+            require("leap").add_default_mappings()
+        end
+    },
+    {
+        "hinell/move.nvim",
+        event = { "BufReadPre", "BufNewFile" },
     }
 }
