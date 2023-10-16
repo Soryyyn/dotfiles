@@ -89,7 +89,25 @@ return {
         end
     },
     {
-        "hinell/move.nvim",
+        "hinell/move.nvim", -- move lines & blocks of code
         event = { "BufReadPre", "BufNewFile" },
+    },
+    {
+        "axelvc/template-string.nvim", -- automatic template string converting
+        event = "VeryLazy",
+        opts = {}
+    },
+    {
+        "folke/todo-comments.nvim", -- highlight todo comments
+        dependencies = {
+            "nvim-lua/plenary.nvim"
+        },
+        event = { "BufReadPre", "BufNewFile" },
+        opts = {}
+    },
+    {
+        "cappyzawa/trim.nvim", -- automatically trim trailing whitespace
+        event = { "BufReadPre", "BufNewFile" },
+        opts = {}
     }
 }
