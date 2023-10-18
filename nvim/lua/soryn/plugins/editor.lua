@@ -109,5 +109,5 @@ return {
         "cappyzawa/trim.nvim", -- automatically trim trailing whitespace
         event = { "BufReadPre", "BufNewFile" },
         opts = {}
-    }
+    },
 }
