@@ -1,7 +1,7 @@
 -- set global leader key to space
 vim.g.mapleader = " "
 
--- better highlight clearing (escape and clear) 
+-- better highlight clearing (escape and clear)
 vim.keymap.set({ "i", "n" }, "<esc>", "<cmd>noh<CR><esc>", { desc = "Exit mode and clear hightlight" })
 
 -- change undo bindings to all be on one key
@@ -49,7 +49,7 @@ vim.keymap.set("n", "+", "<C-a>")
 vim.keymap.set("n", "-", "<C-x>")
 
 -- move lines/blocks
-vim.keymap.set("n", "<M-k>", "<cmd>MoveLine 1<CR>", { desc = "Move line up", silent = true, noremap = true })
-vim.keymap.set("n", "<M-j>", "<cmd>MoveLine -1<CR>", { desc = "Move line down", silent = true, noremap = true })
-vim.keymap.set("v", "<M-k>", ":MoveBlock 1<CR>", { desc = "Move block up", silent = true, noremap = true })
-vim.keymap.set("v", "<M-j>", ":MoveBlock -1<CR>", { desc = "Move block down", silent = true, noremap = true })
+vim.keymap.set("n", "<M-k>", "<cmd>MoveLine -1<CR>", { desc = "Move line up", silent = true, noremap = true })
+vim.keymap.set("n", "<M-j>", "<cmd>MoveLine 1<CR>", { desc = "Move line down", silent = true, noremap = true })
+vim.keymap.set("v", "<M-k>", ":MoveBlock -1<CR>", { desc = "Move block up", silent = true, noremap = true })
+vim.keymap.set("v", "<M-j>", ":MoveBlock 1<CR>", { desc = "Move block down", silent = true, noremap = true })
