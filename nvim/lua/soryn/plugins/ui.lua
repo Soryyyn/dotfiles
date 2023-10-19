@@ -62,6 +62,9 @@ return {
 				"document_symbols",
 			},
 			filesystem = {
+				filtered_items = {
+					visible = true,
+				},
 				follow_current_file = {
 					enabled = true,
 				},
@@ -91,12 +94,6 @@ return {
 				},
 			})
 		end,
-	},
-	{
-		"j-hui/fidget.nvim",
-		tag = "legacy",
-		event = "LspAttach",
-		opts = {},
 	},
 	{
 		"lukas-reineke/indent-blankline.nvim",

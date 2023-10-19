@@ -124,6 +124,16 @@ return {
 						},
 					})
 				end,
+
+				["tailwindcss"] = function()
+					lspconfig["tailwindcss"].setup({
+						capabilities = opts.capabilities,
+						on_attach = function(_, bufnr)
+							on_attach(_, bufnr)
+							require("tailwindcss-colors").buf_attach(bufnr)
+						end,
+					})
+				end,
 			})
 		end,
 	},

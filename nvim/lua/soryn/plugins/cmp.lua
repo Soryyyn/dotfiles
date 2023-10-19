@@ -11,7 +11,10 @@ return {
 			"L3MON4D3/LuaSnip",
 			"rafamadriz/friendly-snippets",
 			"onsails/lspkind.nvim",
-			"roobert/tailwindcss-colorizer-cmp.nvim",
+			{
+				"js-everts/cmp-tailwind-colors",
+				config = true,
+			},
 		},
 		opts = function()
 			local cmp = require("cmp")
@@ -50,7 +53,7 @@ return {
 						maxwidth = 35,
 						ellipsis_char = "...",
 						before = function(entry, vim_item)
-							vim_item = require("tailwindcss-colorizer-cmp").formatter(entry, vim_item)
+							vim_item = require("cmp-tailwind-colors").format(entry, vim_item)
 							return vim_item
 						end,
 					}),
