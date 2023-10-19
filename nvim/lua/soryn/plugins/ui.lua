@@ -24,6 +24,18 @@ return {
 				},
 			},
 		},
+		config = function(_, opts)
+			require("bufferline").setup(opts)
+
+			-- fix bufferline not appearing when restoring session
+			vim.api.nvim_create_autocmd("BufAdd", {
+				callback = function()
+					vim.schedule(function()
+						pcall(nvim_bufferline)
+					end)
+				end,
+			})
+		end,
 	},
 	{
 		"nvim-lualine/lualine.nvim", -- statusline
@@ -35,11 +47,24 @@ return {
 	},
 	{
 		"folke/which-key.nvim", -- show popup for shortcut help
-		opts = {},
+		opts = {
+			defaults = {
+				["<leader>b"] = { name = "+buffer" },
+				["<leader>c"] = { name = "+code" },
+				["<leader>g"] = { name = "+git" },
+				["<leader>f"] = { name = "+file/find" },
+				["<leader>q"] = { name = "+session" },
+			},
+		},
+		config = function(_, opts)
+			local wk = require("which-key")
+			wk.setup(opts)
+			wk.register(opts.defaults)
+		end,
 	},
 	{
 		"kdheepak/lazygit.nvim", -- lazygit inside neovim
-		cmd = { "LazyGit" },
+		event = "VeryLazy",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 		},
@@ -103,6 +128,71 @@ return {
 			scope = {
 				enabled = false,
 			},
+			exclude = {
+				filetypes = {
+					"neo-tree",
+					"dashboard",
+					"help",
+					"lazy",
+					"mason",
+				},
+			},
 		},
+	},
+	{
+		"nvimdev/dashboard-nvim", -- better start screen
+		event = "VimEnter",
+		dependencies = {
+			"nvim-tree/nvim-web-devicons",
+		},
+		config = function()
+			require("dashboard").setup({
+				theme = "doom",
+				config = {
+					header = {
+						"",
+						"",
+						"",
+						"",
+						"",
+						"",
+						"",
+						"",
+						" ⣿⣿⣷⡁⢆⠈⠕⢕⢂⢕⢂⢕⢂⢔⢂⢕⢄⠂⣂⠂⠆⢂⢕⢂⢕⢂⢕⢂⢕⢂ ",
+						" ⣿⣿⣿⡷⠊⡢⡹⣦⡑⢂⢕⢂⢕⢂⢕⢂⠕⠔⠌⠝⠛⠶⠶⢶⣦⣄⢂⢕⢂⢕ ",
+						" ⣿⣿⠏⣠⣾⣦⡐⢌⢿⣷⣦⣅⡑⠕⠡⠐⢿⠿⣛⠟⠛⠛⠛⠛⠡⢷⡈⢂⢕⢂ ",
+						" ⠟⣡⣾⣿⣿⣿⣿⣦⣑⠝⢿⣿⣿⣿⣿⣿⡵⢁⣤⣶⣶⣿⢿⢿⢿⡟⢻⣤⢑⢂ ",
+						" ⣾⣿⣿⡿⢟⣛⣻⣿⣿⣿⣦⣬⣙⣻⣿⣿⣷⣿⣿⢟⢝⢕⢕⢕⢕⢽⣿⣿⣷⣔ ",
+						" ⣿⣿⠵⠚⠉⢀⣀⣀⣈⣿⣿⣿⣿⣿⣿⣿⣿⣿⣗⢕⢕⢕⢕⢕⢕⣽⣿⣿⣿⣿ ",
+						" ⢷⣂⣠⣴⣾⡿⡿⡻⡻⣿⣿⣴⣿⣿⣿⣿⣿⣿⣷⣵⣵⣵⣷⣿⣿⣿⣿⣿⣿⡿ ",
+						" ⢌⠻⣿⡿⡫⡪⡪⡪⡪⣺⣿⣿⣿⣿⣿⠿⠿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃ ",
+						" ⠣⡁⠹⡪⡪⡪⡪⣪⣾⣿⣿⣿⣿⠋⠐⢉⢍⢄⢌⠻⣿⣿⣿⣿⣿⣿⣿⣿⠏⠈ ",
+						" ⡣⡘⢄⠙⣾⣾⣾⣿⣿⣿⣿⣿⣿⡀⢐⢕⢕⢕⢕⢕⡘⣿⣿⣿⣿⣿⣿⠏⠠⠈ ",
+						" ⠌⢊⢂⢣⠹⣿⣿⣿⣿⣿⣿⣿⣿⣧⢐⢕⢕⢕⢕⢕⢅⣿⣿⣿⣿⡿⢋⢜⠠⠈ ",
+						" ⠄⠁⠕⢝⡢⠈⠻⣿⣿⣿⣿⣿⣿⣿⣷⣕⣑⣑⣑⣵⣿⣿⣿⡿⢋⢔⢕⣿⠠⠈ ",
+						" ⠨⡂⡀⢑⢕⡅⠂⠄⠉⠛⠻⠿⢿⣿⣿⣿⣿⣿⣿⣿⣿⡿⢋⢔⢕⢕⣿⣿⠠⠈ ",
+						" ⠄⠪⣂⠁⢕⠆⠄⠂⠄⠁⡀⠂⡀⠄⢈⠉⢍⢛⢛⢛⢋⢔⢕⢕⢕⣽⣿⣿⠠⠈ ",
+						"",
+						"",
+					},
+					center = {
+						{
+							action = "Telescope find_files",
+							desc = " Find files",
+							icon = " ",
+							key = "f",
+						},
+						{ action = "Telescope oldfiles", desc = " Recent files", icon = " ", key = "r" },
+						{ action = "Telescope live_grep", desc = " Find text", icon = " ", key = "g" },
+						{
+							action = 'lua require("persistence").load()',
+							desc = " Restore session",
+							icon = " ",
+							key = "s",
+						},
+					},
+				},
+			})
+		end,
 	},
 }
