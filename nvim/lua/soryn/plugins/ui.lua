@@ -14,6 +14,7 @@ return {
 			options = {
 				mode = "buffers", -- keep track of the buffers
 				seperator_style = "thick", -- make the tab styling thicc
+				diagnostics = "nvim_lsp",
 				offsets = {
 					{
 						filetype = "neo-tree",
