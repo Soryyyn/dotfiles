@@ -47,7 +47,7 @@ return {
 	},
 	{
 		"folke/trouble.nvim", -- better error/warning overview
-		cmd = "Trouble",
+		event = "LspAttach",
 		dependencies = {
 			"nvim-tree/nvim-web-devicons",
 		},

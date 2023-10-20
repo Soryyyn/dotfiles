@@ -53,3 +53,6 @@ vim.keymap.set("n", "<M-k>", "<cmd>MoveLine -1<CR>", { desc = "Move line up", si
 vim.keymap.set("n", "<M-j>", "<cmd>MoveLine 1<CR>", { desc = "Move line down", silent = true, noremap = true })
 vim.keymap.set("v", "<M-k>", ":MoveBlock -1<CR>", { desc = "Move block up", silent = true, noremap = true })
 vim.keymap.set("v", "<M-j>", ":MoveBlock 1<CR>", { desc = "Move block down", silent = true, noremap = true })
+
+-- toggle error/warning overview
+vim.keymap.set("n", "<leader>cd", "<cmd>TroubleToggle<CR>", { desc = "Toggle code diagnostics", silent = true })
