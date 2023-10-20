@@ -45,4 +45,12 @@ return {
 			},
 		},
 	},
+	{
+		"folke/trouble.nvim", -- better error/warning overview
+		cmd = "Trouble",
+		dependencies = {
+			"nvim-tree/nvim-web-devicons",
+		},
+		opts = {},
+	},
 }
