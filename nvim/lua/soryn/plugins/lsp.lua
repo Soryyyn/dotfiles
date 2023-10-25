@@ -6,6 +6,7 @@ return {
 			"mason.nvim",
 			"williamboman/mason-lspconfig.nvim",
 			"ray-x/lsp_signature.nvim",
+			"pmizio/typescript-tools.nvim",
 		},
 		opts = {
 			diagnostics = {
@@ -134,6 +135,18 @@ return {
 						end,
 					})
 				end,
+
+				["tsserver"] = function()
+					require("typescript-tools").setup({
+						on_attach = on_attach,
+						capabilities = opts.capabilities,
+						settings = {
+							expose_as_code_action = {
+								"code_actions",
+							},
+						},
+					})
+				end,
 			})
 		end,
 	},
@@ -189,5 +202,14 @@ return {
 				end,
 			})
 		end,
+	},
+	{
+		"pmizio/typescript-tools.nvim", -- additional typescript lsp tooling
+		event = "LspAttach",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"neovim/nvim-lspconfig",
+		},
+		opts = {},
 	},
 }
