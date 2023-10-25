@@ -2,7 +2,7 @@
 vim.g.mapleader = " "
 
 -- better highlight clearing (escape and clear)
-vim.keymap.set({ "i", "n" }, "<esc>", "<cmd>noh<CR><esc>", { desc = "Exit mode and clear hightlight" })
+vim.keymap.set({ "i", "n" }, "<esc>", "<cmd>noh<CR><esc>", { desc = "Exit mode and clear highlight" })
 
 -- change undo bindings to all be on one key
 vim.keymap.set("n", "<S-u>", "<C-r>", { desc = "Redo" })
@@ -32,7 +32,7 @@ vim.keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<CR>", { desc = "Find o
 vim.keymap.set("n", "<leader>gg", "<cmd>LazyGit<CR>", { desc = "Open LazyGit" })
 
 -- open filetree
-vim.keymap.set("n", "<leader><space>", "<cmd>Neotree<CR>", { desc = "Open filetree" })
+vim.keymap.set("n", "<leader><space>", "<cmd>Neotree toggle<CR>", { desc = "Open filetree" })
 
 -- Change window sizes easier
 vim.keymap.set("n", "<C-Up>", "<C-w>+", { desc = "Increase window height", noremap = true, silent = true })
