@@ -5,7 +5,7 @@ vim.g.mapleader = " "
 vim.keymap.set({ "i", "n" }, "<esc>", "<cmd>noh<CR><esc>", { desc = "Exit mode and clear hightlight" })
 
 -- change undo bindings to all be on one key
-vim.keymap.set("n", "U", "<C-r>", { desc = "Redo", remap = true })
+vim.keymap.set("n", "<S-u>", "<C-r>", { desc = "Redo" })
 
 -- easier window navigation
 vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Move to left window" })
