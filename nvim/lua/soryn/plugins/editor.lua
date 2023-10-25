@@ -54,10 +54,6 @@ return {
 				defaults = {
 					color_devicons = true,
 					path_display = { "truncate" },
-					file_ignore_patterns = {
-						"node_modules",
-						".git",
-					},
 					mappings = {
 						i = {
 							["<C-k>"] = actions.move_selection_previous,

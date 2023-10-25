@@ -29,43 +29,43 @@ return {
 					"n",
 					"gr",
 					"<cmd>Telescope lsp_references<CR>",
-					{ desc = "Show references", noremap = true, silent = true, buffer = bufnr }
+					{ desc = "Show references", silent = true, buffer = bufnr }
 				)
 				vim.keymap.set(
 					"n",
 					"gd",
 					"<cmd>Telescope lsp_definitions<CR>",
-					{ desc = "Show definition(s)", noremap = true, silent = true, buffer = bufnr }
+					{ desc = "Show definition(s)", silent = true, buffer = bufnr }
 				)
 				vim.keymap.set(
 					"n",
 					"gD",
 					vim.lsp.buf.declaration,
-					{ desc = "Go to declaration", noremap = true, silent = true, buffer = bufnr }
+					{ desc = "Go to declaration", silent = true, buffer = bufnr }
 				)
 				vim.keymap.set(
 					"n",
 					"gi",
 					"<cmd>Telescope lsp_implementations<CR>",
-					{ desc = "Show implementations", noremap = true, silent = true, buffer = bufnr }
+					{ desc = "Show implementations", silent = true, buffer = bufnr }
 				)
 				vim.keymap.set(
 					"n",
 					"gt",
 					"<cmd>Telescope lsp_type_definitions<CR>",
-					{ desc = "Show type definitions", noremap = true, silent = true, buffer = bufnr }
+					{ desc = "Show type definitions", silent = true, buffer = bufnr }
 				)
 				vim.keymap.set(
 					{ "n", "v" },
 					"<leader>ca",
 					vim.lsp.buf.code_action,
-					{ desc = "See available code actions", noremap = true, silent = true, buffer = bufnr }
+					{ desc = "See available code actions", silent = true, buffer = bufnr }
 				)
 				vim.keymap.set(
 					"n",
 					"K",
 					vim.lsp.buf.hover,
-					{ desc = "Show doc for what is under cursor", noremap = true, silent = true, buffer = bufnr }
+					{ desc = "Show doc for what is under cursor", silent = true, buffer = bufnr }
 				)
 				vim.keymap.set(
 					"n",
