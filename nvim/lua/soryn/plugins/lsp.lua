@@ -66,7 +66,7 @@ return {
 					"n",
 					"K",
 					vim.lsp.buf.hover,
-					{ desc = "Show doc for what is under cursor", silent = true, buffer = bufnr }
+					{ desc = "Show doc for what is under cursor", remap = true, silent = true, buffer = bufnr }
 				)
 				vim.keymap.set(
 					"n",
@@ -139,11 +139,8 @@ return {
 				["tsserver"] = function()
 					require("typescript-tools").setup({
 						on_attach = on_attach,
-						capabilities = opts.capabilities,
 						settings = {
-							expose_as_code_action = {
-								"code_actions",
-							},
+							expose_as_code_action = "all",
 						},
 					})
 				end,
