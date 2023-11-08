@@ -209,4 +209,11 @@ return {
 		},
 		opts = {},
 	},
+	{
+		"zeioth/garbage-day.nvim", -- free RAM by stopping lsp when idled to long
+		dependencies = {
+			"neovim/nvim-lspconfig",
+		},
+		event = "VeryLazy",
+	},
 }

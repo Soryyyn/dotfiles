@@ -81,7 +81,12 @@ return {
 			local illuminate = require("illuminate")
 
 			-- keybindings
-			vim.keymap.set("n", "<C-r>", illuminate.goto_next_reference, { desc = "Goto next reference" })
+			vim.keymap.set(
+				"n",
+				"<C-r>",
+				illuminate.goto_next_reference,
+				{ desc = "Goto next reference", noremap = true }
+			)
 
 			illuminate.configure(opts)
 		end,
