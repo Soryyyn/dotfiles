@@ -53,4 +53,11 @@ return {
 		},
 		opts = {},
 	},
+	{
+		"echasnovski/mini.bufremove", -- better buffer closing, deleting, wiping whilst respecting window layout
+		version = "*",
+		config = function()
+			require("mini.bufremove").setup({})
+		end,
+	},
 }

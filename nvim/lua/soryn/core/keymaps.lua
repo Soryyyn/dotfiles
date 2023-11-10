@@ -18,8 +18,18 @@ vim.keymap.set("n", "<tab>", "<cmd>BufferLineCycleNext<CR>", { desc = "Next buff
 vim.keymap.set("n", "<S-tab>", "<cmd>BufferLineCyclePrev<CR>", { desc = "Previos buffer", silent = true })
 
 -- buffer selecting, closing, etc.
-vim.keymap.set("n", "<leader>bq", "<cmd>bd<CR>", { desc = "Close current buffer", silent = true })
-vim.keymap.set("n", "<leader>bx", "<cmd>bd!<CR>", { desc = "Close current buffer (force)", silent = true })
+vim.keymap.set(
+	"n",
+	"<leader>bd",
+	"<cmd>lua MiniBufremove.delete(0)<CR>",
+	{ desc = "Close current buffer", silent = true }
+)
+vim.keymap.set(
+	"n",
+	"<leader>bD",
+	"<cmd>lua MiniBufremove.delete(0, true)<CR>",
+	{ desc = "Close current buffer (force)", silent = true }
+)
 vim.keymap.set("n", "<leader>bp", "<cmd>BufferLinePick<CR>", { desc = "Pick from open buffers", silent = true })
 
 -- telescope bindings
