@@ -44,7 +44,15 @@ return {
 		dependencies = {
 			"nvim-tree/nvim-web-devicons",
 		},
-		opts = {},
+		opts = {
+			options = {
+				disabled_filetypes = {
+					statusline = {
+						"dashboard",
+					},
+				},
+			},
+		},
 	},
 	{
 		"folke/which-key.nvim", -- show popup for shortcut help
@@ -149,6 +157,9 @@ return {
 		config = function()
 			require("dashboard").setup({
 				theme = "doom",
+				hide = {
+					statusline = false,
+				},
 				config = {
 					header = {
 						"",

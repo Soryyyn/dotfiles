@@ -54,6 +54,13 @@ return {
 				defaults = {
 					color_devicons = true,
 					path_display = { "truncate" },
+					layout_strategy = "horizontal",
+					layout_config = {
+						horizontal = {
+							prompt_position = "top",
+						},
+					},
+					sorting_strategy = "ascending",
 					mappings = {
 						i = {
 							["<C-k>"] = actions.move_selection_previous,
