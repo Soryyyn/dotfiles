@@ -66,7 +66,7 @@ return {
 					"n",
 					"K",
 					vim.lsp.buf.hover,
-					{ desc = "Show doc for what is under cursor", remap = true, silent = true, buffer = bufnr }
+					{ desc = "Hover information", remap = true, silent = true, buffer = bufnr }
 				)
 				vim.keymap.set(
 					"n",
