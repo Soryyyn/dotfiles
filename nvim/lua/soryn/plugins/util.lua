@@ -60,4 +60,12 @@ return {
 			require("mini.bufremove").setup({})
 		end,
 	},
+	{
+		"akinsho/toggleterm.nvim", -- able to create a terminal session inside vim
+		version = "*",
+		opts = {
+			direction = "vertical",
+			size = 60,
+		},
+	},
 }

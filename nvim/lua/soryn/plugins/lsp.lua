@@ -80,6 +80,8 @@ return {
 					vim.lsp.buf.rename,
 					{ desc = "Rename variable", silent = true, buffer = bufnr }
 				)
+				vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Goto previous diagnostic" })
+				vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Goto next diagnostic" })
 
 				-- attach function signature help
 				require("lsp_signature").on_attach({

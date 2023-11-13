@@ -67,3 +67,12 @@ vim.keymap.set("v", "<M-j>", ":MoveBlock 1<CR>", { desc = "Move block down", sil
 
 -- toggle error/warning overview
 vim.keymap.set("n", "<leader>cd", "<cmd>TroubleToggle<CR>", { desc = "Toggle code diagnostics", silent = true })
+
+-- toggleable terminal
+vim.keymap.set("n", "<leader>tt", "<cmd>ToggleTerm<CR>", { desc = "Toggle terminal", silent = true, noremap = true })
+vim.keymap.set(
+	"t",
+	"<M-c>",
+	"<C-\\><C-n>",
+	{ desc = "Exit terminal mode inside terminal", silent = true, noremap = true }
+)
