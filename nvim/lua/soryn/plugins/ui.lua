@@ -196,7 +196,8 @@ return {
 							key = "f",
 						},
 						{ action = "Telescope oldfiles", desc = " Recent files", icon = " ", key = "r" },
-						{ action = "Telescope live_grep", desc = " Find text", icon = " ", key = "g" },
+						{ action = "Telescope live_grep", desc = " Find text", icon = " ", key = "s" },
+						{ action = "LazyGit", desc = " Repo (lazygit)", icon = " ", key = "g" },
 						{
 							action = 'lua require("persistence").load()',
 							desc = " Restore session",
