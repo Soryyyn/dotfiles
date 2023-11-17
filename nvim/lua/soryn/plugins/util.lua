@@ -64,8 +64,10 @@ return {
 		"akinsho/toggleterm.nvim", -- able to create a terminal session inside vim
 		version = "*",
 		opts = {
-			direction = "vertical",
-			size = 60,
+			direction = "float",
+			float_opts = {
+				border = "curved",
+			},
 		},
 	},
 }
