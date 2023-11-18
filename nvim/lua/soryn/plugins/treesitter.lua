@@ -9,6 +9,9 @@ return {
 		},
 		cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
 		config = function()
+			-- commenting in mixed frontend context
+			require("ts_context_commentstring").setup({})
+
 			require("nvim-treesitter.configs").setup({
 				ensure_installed = { "lua", "typescript", "javascript", "html", "json", "markdown" }, -- make sure the following parser are installed
 				sync_install = false,
@@ -34,9 +37,6 @@ return {
 					enable = true,
 				},
 			})
-
-			-- commenting in mixed frontend context
-			require("ts_context_commentstring").setup({})
 		end,
 	},
 	{
