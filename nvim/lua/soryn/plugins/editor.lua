@@ -17,7 +17,14 @@ return {
 	{
 		"numToStr/Comment.nvim", -- comment out lines/blocks easier
 		event = { "BufReadPre", "BufNewFile" },
-		opts = {},
+		dependencies = {
+			"JoosepAlviste/nvim-ts-context-commentstring",
+		},
+		config = function()
+			require("Comment").setup({
+				pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
+			})
+		end,
 	},
 	{
 		"kylechui/nvim-surround", -- surround things a looooot easier
@@ -88,7 +95,12 @@ return {
 			local illuminate = require("illuminate")
 
 			-- keybindings
-			vim.keymap.set("n", "<C-r>", illuminate.goto_next_reference, { desc = "Goto next reference", remap = true })
+			vim.keymap.set(
+				"n",
+				"<C-r>",
+				illuminate.goto_next_reference,
+				{ desc = "Goto next reference", noremap = true }
+			)
 
 			illuminate.configure(opts)
 		end,

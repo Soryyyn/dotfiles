@@ -75,3 +75,9 @@ vim.keymap.set(
 	"<cmd>ToggleTerm<CR>",
 	{ desc = "Toggle terminal", silent = true, noremap = true }
 )
+
+-- quickfix navigation
+vim.keymap.set("n", "<leader>qq", "<CMD>QFToggle<CR>", { desc = "Toggle quickfix list" })
+vim.keymap.set("n", "<leader>qc", "<CMD>Cclear<CR>", { desc = "Clear quickfix list" })
+vim.keymap.set("n", "<C-n>", "<CMD>QFNext<CR>", { desc = "Goto next quickfix list entry" })
+vim.keymap.set("n", "<C-p>", "<CMD>QFPrev<CR>", { desc = "Goto previous quickfix list entry" })

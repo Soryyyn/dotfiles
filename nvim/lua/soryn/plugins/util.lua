@@ -23,21 +23,21 @@ return {
 		},
 		keys = {
 			{
-				"<leader>qr",
+				"<leader>sr",
 				function()
 					require("persistence").load()
 				end,
 				desc = "Restore session",
 			},
 			{
-				"<leader>ql",
+				"<leader>sl",
 				function()
 					require("persistence").load({ last = true })
 				end,
 				desc = "Restore last session",
 			},
 			{
-				"<leader>qd",
+				"<leader>sd",
 				function()
 					require("persistence").stop()
 				end,
@@ -69,5 +69,12 @@ return {
 				border = "curved",
 			},
 		},
+	},
+	{
+		"stevearc/qf_helper.nvim", -- makes navigating and using quickfix lists easier
+		event = { "BufReadPre", "BufNewFile" },
+		config = function()
+			require("qf_helper").setup({})
+		end,
 	},
 }

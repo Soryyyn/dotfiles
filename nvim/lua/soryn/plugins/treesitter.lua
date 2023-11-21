@@ -5,7 +5,6 @@ return {
 		build = ":TSUpdate",
 		dependencies = {
 			"nvim-treesitter/playground",
-			"JoosepAlviste/nvim-ts-context-commentstring",
 		},
 		cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
 		config = function()
@@ -26,14 +25,14 @@ return {
 						node_incremental = "<C-Space>",
 					},
 				},
+				textobjects = {
+					enable = true,
+				},
 				autotag = {
 					enable = true,
-					enable_close_on_slash = true,
+					enable_close_on_slash = false,
 				},
 			})
-
-			-- commenting in mixed frontend context
-			require("ts_context_commentstring").setup({})
 		end,
 	},
 	{
