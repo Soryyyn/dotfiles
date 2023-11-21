@@ -23,6 +23,9 @@ return {
 						text_align = "left",
 					},
 				},
+				middle_mouse_command = false,
+				right_mouse_command = false,
+				left_mouse_command = false,
 			},
 		},
 		config = function(_, opts)

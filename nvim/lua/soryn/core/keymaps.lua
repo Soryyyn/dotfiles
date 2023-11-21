@@ -4,6 +4,10 @@ vim.g.mapleader = " "
 -- better highlight clearing (escape and clear)
 vim.keymap.set({ "i", "n" }, "<esc>", "<cmd>noh<CR><esc>", { desc = "Exit mode and clear highlight" })
 
+-- better half page scrolling (now with centering)
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+
 -- change undo bindings to all be on one key
 vim.keymap.set("n", "<S-u>", "<C-r>", { desc = "Redo" })
 
@@ -31,6 +35,12 @@ vim.keymap.set(
 	{ desc = "Close current buffer (force)", silent = true }
 )
 vim.keymap.set("n", "<leader>bp", "<cmd>BufferLinePick<CR>", { desc = "Pick from open buffers", silent = true })
+vim.keymap.set(
+	"n",
+	"<leader>bc",
+	"<cmd>BufferLineCloseOthers<CR>",
+	{ desc = "Close all buffers except active one", silent = true }
+)
 
 -- telescope bindings
 vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<CR>", { desc = "Find files in cwd" })
