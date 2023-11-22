@@ -29,13 +29,13 @@ return {
 				vim.keymap.set(
 					"n",
 					"gr",
-					"<cmd>Telescope lsp_references<CR>",
+					"<CMD>Telescope lsp_references<CR>",
 					{ desc = "Show references", silent = true, buffer = bufnr }
 				)
 				vim.keymap.set(
 					"n",
 					"gd",
-					"<cmd>Telescope lsp_definitions<CR>",
+					"<CMD>Telescope lsp_definitions<CR>",
 					{ desc = "Show definition(s)", silent = true, buffer = bufnr }
 				)
 				vim.keymap.set(
@@ -47,13 +47,13 @@ return {
 				vim.keymap.set(
 					"n",
 					"gi",
-					"<cmd>Telescope lsp_implementations<CR>",
+					"<CMD>Telescope lsp_implementations<CR>",
 					{ desc = "Show implementations", silent = true, buffer = bufnr }
 				)
 				vim.keymap.set(
 					"n",
 					"gt",
-					"<cmd>Telescope lsp_type_definitions<CR>",
+					"<CMD>Telescope lsp_type_definitions<CR>",
 					{ desc = "Show type definitions", silent = true, buffer = bufnr }
 				)
 				vim.keymap.set(
