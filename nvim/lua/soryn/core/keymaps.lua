@@ -8,6 +8,9 @@ vim.keymap.set({ "i", "n" }, "<esc>", "<CMD>noh<CR><esc>", { desc = "Exit mode a
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
+-- paste selected text without yanking the replaced text
+vim.keymap.set("n", "<leader>p", '"_dP', { desc = "Paste text without yanking selected" })
+
 -- change undo bindings to all be on one key
 vim.keymap.set("n", "<S-u>", "<C-r>", { desc = "Redo" })
 
