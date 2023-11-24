@@ -60,7 +60,7 @@ return {
 					{ "n", "v" },
 					"<leader>ca",
 					vim.lsp.buf.code_action,
-					{ desc = "See available code actions", silent = true, buffer = bufnr }
+					{ desc = "See available code actions", silent = true, buffer = bufnr, noremap = true }
 				)
 				vim.keymap.set(
 					"n",
