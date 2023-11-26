@@ -51,3 +51,6 @@ vim.opt.pumheight = 15
 
 -- enable autoformat
 vim.g.autoformat = true
+
+-- live preview of changes (accept & decline)
+vim.o.inccommand = "split"

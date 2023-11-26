@@ -73,10 +73,10 @@ vim.keymap.set("n", "+", "<C-a>")
 vim.keymap.set("n", "-", "<C-x>")
 
 -- move lines/blocks
-vim.keymap.set("n", "<M-k>", "<CMD>MoveLine -1<CR>", { desc = "Move line up", silent = true, noremap = true })
-vim.keymap.set("n", "<M-j>", "<CMD>MoveLine 1<CR>", { desc = "Move line down", silent = true, noremap = true })
-vim.keymap.set("v", "<M-k>", "<CMD>MoveBlock -1<CR>", { desc = "Move block up", silent = true, noremap = true })
-vim.keymap.set("v", "<M-j>", "<CMD>MoveBlock 1<CR>", { desc = "Move block down", silent = true, noremap = true })
+vim.keymap.set("n", "<M-k>", ":MoveLine -1<CR>", { desc = "Move line up", silent = true, noremap = true })
+vim.keymap.set("n", "<M-j>", ":MoveLine 1<CR>", { desc = "Move line down", silent = true, noremap = true })
+vim.keymap.set("v", "<M-k>", ":MoveBlock -1<CR>", { desc = "Move block up", silent = true, noremap = true })
+vim.keymap.set("v", "<M-j>", ":MoveBlock 1<CR>", { desc = "Move block down", silent = true, noremap = true })
 
 -- toggle error/warning overview
 vim.keymap.set("n", "<leader>cd", "<CMD>TroubleToggle<CR>", { desc = "Toggle code diagnostics", silent = true })
@@ -94,3 +94,9 @@ vim.keymap.set("n", "<leader>qq", "<CMD>QFToggle<CR>", { desc = "Toggle quickfix
 vim.keymap.set("n", "<leader>qc", "<CMD>Cclear<CR>", { desc = "Clear quickfix list" })
 vim.keymap.set("n", "<C-n>", "<CMD>QNext<CR>", { desc = "Goto next quickfix list entry" })
 vim.keymap.set("n", "<C-p>", "<CMD>QPrev<CR>", { desc = "Goto previous quickfix list entry" })
+
+-- search & replace
+vim.keymap.set("v", "<leader>r", "<CMD>SearchReplaceSingleBufferVisualSelection<CR>", { desc = "Replace selection" })
+vim.keymap.set("n", "<leader>rr", "<CMD>SearchReplaceSingleBufferOpen<CR>", { desc = "Search/replace menu" })
+vim.keymap.set("n", "<leader>rw", "<CMD>SearchReplaceSingleBufferCWord<CR>", { desc = "Replace current word" })
+vim.keymap.set("n", "<leader>rW", "<CMD>SearchReplaceSingleBufferCWORD<CR>", { desc = "Replace current WORD" })

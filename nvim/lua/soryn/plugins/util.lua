@@ -77,4 +77,11 @@ return {
 			require("qf_helper").setup({})
 		end,
 	},
+	{
+		"roobert/search-replace.nvim", -- better search & replace
+		event = { "BufReadPre", "BufNewFile" },
+		config = function()
+			require("search-replace").setup({})
+		end,
+	},
 }

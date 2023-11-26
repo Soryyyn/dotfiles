@@ -68,6 +68,7 @@ return {
 				["<leader>f"] = { name = "+file/find" },
 				["<leader>s"] = { name = "+session" },
 				["<leader>q"] = { name = "+quickfix" },
+				["<leader>r"] = { name = "+replace" },
 			},
 		},
 		config = function(_, opts)
