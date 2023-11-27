@@ -38,6 +38,7 @@ vim.keymap.set(
 	{ desc = "Close current buffer (force)", silent = true }
 )
 vim.keymap.set("n", "<leader>bp", "<CMD>BufferLinePick<CR>", { desc = "Pick from open buffers", silent = true })
+vim.keymap.set("n", "<leader>bP", "<CMD>BufferLineTogglePin<CR>", { desc = "Pin buffer", silent = true })
 vim.keymap.set(
 	"n",
 	"<leader>bc",
