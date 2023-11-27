@@ -9,7 +9,7 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
 -- paste selected text without yanking the replaced text
-vim.keymap.set("n", "<leader>p", '"_dP', { desc = "Paste text without yanking selected" })
+vim.keymap.set("v", "<leader>p", '"_dP', { desc = "Paste text without yanking selected" })
 
 -- change undo bindings to all be on one key
 vim.keymap.set("n", "<S-u>", "<C-r>", { desc = "Redo" })
@@ -92,8 +92,8 @@ vim.keymap.set(
 -- quickfix navigation
 vim.keymap.set("n", "<leader>qq", "<CMD>QFToggle<CR>", { desc = "Toggle quickfix list" })
 vim.keymap.set("n", "<leader>qc", "<CMD>Cclear<CR>", { desc = "Clear quickfix list" })
-vim.keymap.set("n", "<C-n>", "<CMD>QNext<CR>", { desc = "Goto next quickfix list entry" })
-vim.keymap.set("n", "<C-p>", "<CMD>QPrev<CR>", { desc = "Goto previous quickfix list entry" })
+vim.keymap.set("n", "<leader>qj", "<CMD>QNext<CR>", { desc = "Goto next quickfix list entry" })
+vim.keymap.set("n", "<leader>qk", "<CMD>QPrev<CR>", { desc = "Goto previous quickfix list entry" })
 
 -- search & replace
 vim.keymap.set("v", "<leader>r", "<CMD>SearchReplaceSingleBufferVisualSelection<CR>", { desc = "Replace selection" })

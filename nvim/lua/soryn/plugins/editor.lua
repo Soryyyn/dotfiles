@@ -133,4 +133,14 @@ return {
 		event = { "BufReadPre", "BufNewFile" },
 		opts = {},
 	},
+	{
+		"f-person/git-blame.nvim", -- git blame info
+		event = { "BufReadPre", "BufNewFile" },
+		config = function()
+			require("gitblame").setup({
+				delay = 1000,
+				virtual_text_column = 80,
+			})
+		end,
+	},
 }
