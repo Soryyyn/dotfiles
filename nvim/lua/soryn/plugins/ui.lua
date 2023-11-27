@@ -23,9 +23,6 @@ return {
 						text_align = "left",
 					},
 				},
-				middle_mouse_command = false,
-				right_mouse_command = false,
-				left_mouse_command = false,
 			},
 		},
 		config = function(_, opts)
@@ -132,6 +129,7 @@ return {
 					changedelete = { text = "~" },
 					untracked = { text = "▍" },
 				},
+				current_line_blame = true,
 			})
 		end,
 	},
