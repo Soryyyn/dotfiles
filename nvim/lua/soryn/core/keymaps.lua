@@ -45,6 +45,8 @@ vim.keymap.set(
 	"<CMD>BufferLineCloseOthers<CR>",
 	{ desc = "Close all buffers except active one", silent = true }
 )
+vim.keymap.set("n", "<leader>bl", "<CMD>BufferLineCloseRight<CR>", { desc = "Close all buffers right", silent = true })
+vim.keymap.set("n", "<leader>bh", "<CMD>BufferLineCloseLeft<CR>", { desc = "Close all buffers left", silent = true })
 
 -- telescope bindings
 vim.keymap.set("n", "<leader>ff", "<CMD>Telescope find_files<CR>", { desc = "Find files in cwd" })
