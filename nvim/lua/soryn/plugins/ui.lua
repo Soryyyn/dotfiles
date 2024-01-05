@@ -45,15 +45,17 @@ return {
 		dependencies = {
 			"nvim-tree/nvim-web-devicons",
 		},
-		opts = {
-			options = {
-				disabled_filetypes = {
-					statusline = {
-						"dashboard",
+		config = function()
+			require("lualine").setup({
+				options = {
+					disabled_filetypes = {
+						statusline = {
+							"dashboard",
+						},
 					},
 				},
-			},
-		},
+			})
+		end,
 	},
 	{
 		"folke/which-key.nvim", -- show popup for shortcut help

@@ -218,4 +218,25 @@ return {
 		},
 		event = "VeryLazy",
 	},
+	{
+		"antosha417/nvim-lsp-file-operations", -- trigger lsp actions when moving/renaming files
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"nvim-neo-tree/neo-tree.nvim",
+		},
+		config = function()
+			require("lsp-file-operations").setup()
+		end,
+	},
+	{
+		"j-hui/fidget.nvim", -- lsp operations notifications
+		opts = {
+			progress = {
+				display = {
+					render_limit = 6,
+					done_ttl = 1,
+				},
+			},
+		},
+	},
 }
