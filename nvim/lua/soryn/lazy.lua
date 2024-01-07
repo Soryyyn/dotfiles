@@ -1,29 +1,29 @@
 -- bootstrap lazy.nvim for plugins
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-    vim.fn.system({
-        "git",
-        "clone",
-        "--filter=blob:none",
-        "https://github.com/folke/lazy.nvim.git",
-        "--branch=stable", -- latest stable release
-        lazypath,
-    })
+	vim.fn.system({
+		"git",
+		"clone",
+		"--filter=blob:none",
+		"https://github.com/folke/lazy.nvim.git",
+		"--branch=stable", -- latest stable release
+		lazypath,
+	})
 end
 vim.opt.rtp:prepend(lazypath)
 
 -- load the plugins from the plugins file
 require("lazy").setup({
-    { import = "soryn.plugins" },
+	{ import = "soryn.plugins" },
 }, {
-    install = {
-        colorscheme = { "carbonfox" }
-    },
-    checker = {
-        enabled = true,
-        notify = false
-    },
-    change_detection = {
-        notify = false
-    }
+	install = {
+		colorscheme = { "carbonfox" },
+	},
+	checker = {
+		enabled = true,
+		notify = false,
+	},
+	change_detection = {
+		notify = false,
+	},
 })

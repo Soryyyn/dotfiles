@@ -124,12 +124,12 @@ return {
 		config = function()
 			require("gitsigns").setup({
 				signs = {
-					add = { text = "▍" },
-					change = { text = "▍" },
-					delete = { text = "▶" },
-					topdelete = { text = "▶" },
+					add = { text = "+" },
+					untracked = { text = "+" },
+					change = { text = "~" },
 					changedelete = { text = "~" },
-					untracked = { text = "▍" },
+					delete = { text = "-" },
+					topdelete = { text = "-" },
 				},
 				current_line_blame = true,
 			})
@@ -209,27 +209,10 @@ return {
 							icon = " ",
 							key = "s",
 						},
+						{ action = "Lazy", desc = " Lazy", icon = "󰒲 ", key = "l" },
 					},
 				},
 			})
 		end,
-	},
-	{
-		"mawkler/modicator.nvim", -- change absolute linenumber color depending on mode
-		dependencies = {
-			"EdenEast/nightfox.nvim",
-		},
-		init = function()
-			vim.o.cursorline = true
-			vim.o.number = true
-			vim.o.termguicolors = true
-		end,
-		opts = {
-			highlights = {
-				defaults = {
-					bold = true,
-				},
-			},
-		},
 	},
 }
