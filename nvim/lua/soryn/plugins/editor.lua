@@ -75,6 +75,17 @@ return {
 						},
 					},
 				},
+				pickers = {
+					buffers = {
+						show_all_buffers = true,
+						sort_mru = true,
+						mappings = {
+							n = {
+								["<DELETE>"] = actions.delete_buffer,
+							},
+						},
+					},
+				},
 			})
 
 			telescope.load_extension("fzf")

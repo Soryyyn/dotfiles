@@ -3,42 +3,42 @@ return {
 		"stevearc/dressing.nvim", -- better ui
 		event = "VeryLazy",
 	},
-	{
-		"akinsho/bufferline.nvim", -- buffer "tabs" & tab indicators
-		event = "VeryLazy",
-		dependencies = {
-			"nvim-tree/nvim-web-devicons",
-		},
-		version = "*",
-		opts = {
-			options = {
-				mode = "buffers", -- keep track of the buffers
-				seperator_style = "thick", -- make the tab styling thicc
-				diagnostics = "nvim_lsp",
-				offsets = {
-					{
-						filetype = "neo-tree",
-						text = "Filetree",
-						highlight = "Directory",
-						text_align = "left",
-					},
-				},
-			},
-		},
-		config = function(_, opts)
-			require("bufferline").setup(opts)
-
-			-- fix bufferline not appearing when restoring session
-			vim.api.nvim_create_autocmd("BufAdd", {
-				callback = function()
-					vim.schedule(function()
-						---@diagnostic disable-next-line: undefined-global
-						pcall(nvim_bufferline)
-					end)
-				end,
-			})
-		end,
-	},
+	-- {
+	-- 	"akinsho/bufferline.nvim", -- buffer "tabs" & tab indicators
+	-- 	event = "VeryLazy",
+	-- 	dependencies = {
+	-- 		"nvim-tree/nvim-web-devicons",
+	-- 	},
+	-- 	version = "*",
+	-- 	opts = {
+	-- 		options = {
+	-- 			mode = "buffers", -- keep track of the buffers
+	-- 			seperator_style = "thick", -- make the tab styling thicc
+	-- 			diagnostics = "nvim_lsp",
+	-- 			offsets = {
+	-- 				{
+	-- 					filetype = "neo-tree",
+	-- 					text = "Filetree",
+	-- 					highlight = "Directory",
+	-- 					text_align = "left",
+	-- 				},
+	-- 			},
+	-- 		},
+	-- 	},
+	-- 	config = function(_, opts)
+	-- 		require("bufferline").setup(opts)
+	--
+	-- 		-- fix bufferline not appearing when restoring session
+	-- 		vim.api.nvim_create_autocmd("BufAdd", {
+	-- 			callback = function()
+	-- 				vim.schedule(function()
+	-- 					---@diagnostic disable-next-line: undefined-global
+	-- 					pcall(nvim_bufferline)
+	-- 				end)
+	-- 			end,
+	-- 		})
+	-- 	end,
+	-- },
 	{
 		"nvim-lualine/lualine.nvim", -- statusline
 		event = "VeryLazy",
@@ -201,7 +201,7 @@ return {
 							key = "f",
 						},
 						{ action = "Telescope oldfiles", desc = " Recent files", icon = " ", key = "r" },
-						{ action = "Telescope live_grep", desc = " Find text", icon = " ", key = "s" },
+						{ action = "Telescope live_grep", desc = " Find text", icon = " ", key = "t" },
 						{ action = "LazyGit", desc = " Repo (lazygit)", icon = " ", key = "g" },
 						{
 							action = 'lua require("persistence").load()',

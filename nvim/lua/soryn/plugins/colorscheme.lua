@@ -8,7 +8,6 @@ return {
 				options = {
 					terminal_colors = true,
 					module_default = true,
-					hide_end_of_buffer = false,
 					inverse = { -- inverse colors
 						match_paren = false,
 						visual = true,
