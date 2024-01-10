@@ -68,6 +68,7 @@ return {
 				["<leader>s"] = { name = "+session" },
 				["<leader>q"] = { name = "+quickfix" },
 				["<leader>r"] = { name = "+replace" },
+				["<leader>h"] = { name = "+hunk" },
 			},
 		},
 		config = function(_, opts)
@@ -153,6 +154,17 @@ return {
 				},
 			},
 		},
+	},
+	{
+		"utilyre/barbecue.nvim", -- winbar
+		name = "barbecue",
+		version = "*",
+		event = { "BufReadPre", "BufNewFile" },
+		dependencies = {
+			"SmiteshP/nvim-navic",
+			"nvim-tree/nvim-web-devicons",
+		},
+		opts = {},
 	},
 	{
 		"nvimdev/dashboard-nvim", -- better start screen

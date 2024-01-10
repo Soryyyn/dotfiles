@@ -5,6 +5,7 @@ return {
 		build = ":TSUpdate",
 		dependencies = {
 			"nvim-treesitter/playground",
+			"nvim-treesitter/nvim-treesitter-textobjects",
 		},
 		cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
 		config = function()
