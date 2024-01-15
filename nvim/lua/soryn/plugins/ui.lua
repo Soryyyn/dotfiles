@@ -68,7 +68,6 @@ return {
 				["<leader>s"] = { name = "+session" },
 				["<leader>q"] = { name = "+quickfix" },
 				["<leader>r"] = { name = "+replace" },
-				["<leader>h"] = { name = "+hunk" },
 			},
 		},
 		config = function(_, opts)

@@ -100,9 +100,3 @@ km.set("v", "<leader>r", "<CMD>SearchReplaceSingleBufferVisualSelection<CR>", { 
 km.set("n", "<leader>rr", "<CMD>SearchReplaceSingleBufferOpen<CR>", { desc = "Search/replace menu" })
 km.set("n", "<leader>rw", "<CMD>SearchReplaceSingleBufferCWord<CR>", { desc = "Replace current word" })
 km.set("n", "<leader>rW", "<CMD>SearchReplaceSingleBufferCWORD<CR>", { desc = "Replace current WORD" })
-
--- hunk actions (git changed chunks)
-km.set("n", "[h", "<CMD>Gitsigns prev_hunk<CR>", { desc = "Previous hunk" })
-km.set("n", "]h", "<CMD>Gitsigns next_hunk<CR>", { desc = "Next hunk" })
-km.set("n", "<leader>hp", "<CMD>Gitsigns preview_hunk_inline<CR>", { desc = "Preview hunk inline" })
-km.set("n", "<leader>hr", "<CMD>Gitsigns reset_hunk<CR>", { desc = "Reset hunk" })
