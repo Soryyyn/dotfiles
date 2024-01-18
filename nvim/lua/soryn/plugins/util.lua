@@ -84,4 +84,9 @@ return {
 			require("search-replace").setup({})
 		end,
 	},
+	{
+		"chrisgrieser/nvim-early-retirement", -- close buffers if they have been open for too long
+		config = true,
+		event = "VeryLazy",
+	},
 }
