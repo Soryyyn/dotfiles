@@ -165,6 +165,81 @@ return {
 		},
 		opts = {},
 	},
+	-- {
+	-- 	"luukvbaal/statuscol.nvim", -- change statuscol
+	-- 	config = function()
+	-- 		local builtin = require("statuscol.builtin")
+	--
+	-- 		require("statuscol").setup({
+	-- 			setopt = true,
+	-- 			relculright = true,
+	-- 			segments = {
+	-- 				{
+	-- 					text = {
+	-- 						builtin.foldfunc,
+	-- 						"",
+	-- 					},
+	-- 					click = "v:lua.ScFa",
+	-- 					hl = "Comment",
+	-- 				},
+	-- 				{ text = { "%s" }, click = "v:lua.ScSa" },
+	-- 				{ text = { builtin.lnumfunc, " " }, click = "v:lua.ScLa" },
+	-- 			},
+	-- 		})
+	-- 	end,
+	-- },
+	-- {
+	-- 	"kevinhwang91/nvim-ufo", -- folding,
+	-- 	dependencies = {
+	-- 		"kevinhwang91/promise-async",
+	-- 		"luukvbaal/statuscol.nvim",
+	-- 	},
+	-- 	config = function()
+	-- 		local builtin = require("statuscol.builtin")
+	--
+	-- 		-- setup statuscol
+	-- 		require("statuscol").setup({
+	-- 			setopt = true,
+	-- 			relculright = true,
+	-- 			segments = {
+	-- 				{ text = { builtin.foldfunc, " " }, click = "v:lua.ScFa", hl = "Comment" },
+	-- 				{ text = { "%s" }, click = "v:lua.ScSa" },
+	-- 				{ text = { builtin.lnumfunc, " " }, click = "v:lua.ScLa" },
+	-- 			},
+	-- 		})
+	--
+	-- 		-- folding settings
+	-- 		vim.o.foldcolumn = "1" -- '0' is not bad
+	-- 		vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+	-- 		vim.o.foldlevelstart = 99
+	-- 		vim.o.foldenable = true
+	-- 		vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
+	--
+	-- 		require("ufo").setup({
+	-- 			close_fold_kinds = {},
+	-- 			preview = {
+	-- 				win_config = {
+	-- 					border = { "", "─", "", "", "", "─", "", "" },
+	-- 					winhighlight = "Normal:Folded",
+	-- 					winblend = 0,
+	-- 				},
+	-- 				mappings = {
+	-- 					scrollU = "<C-k>",
+	-- 					scrollD = "<C-j>",
+	-- 					jumpTop = "[",
+	-- 					jumpBot = "]",
+	-- 				},
+	-- 			},
+	-- 		})
+	--
+	-- 		-- remaps
+	-- 		vim.keymap.set("n", "zR", require("ufo").openAllFolds)
+	-- 		vim.keymap.set("n", "zM", require("ufo").closeAllFolds)
+	-- 		vim.keymap.set("n", "zr", require("ufo").openFoldsExceptKinds)
+	-- 		vim.keymap.set("n", "zm", require("ufo").closeFoldsWith)
+	-- 		vim.keymap.set("n", "zK", require("ufo").peekFoldedLinesUnderCursor, { desc = "Peek fold" })
+	-- 	end,
+	-- },
 	{
 		"nvimdev/dashboard-nvim", -- better start screen
 		event = "VimEnter",

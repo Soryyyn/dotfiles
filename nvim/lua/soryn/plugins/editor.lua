@@ -95,10 +95,9 @@ return {
 		"RRethy/vim-illuminate", -- highlight same word when cursor is over it
 		event = { "BufReadPre", "BufNewFile" },
 		opts = {
-			delay = 200,
 			large_file_cutoff = 2000,
 			large_file_overrides = {
-				providers = { "lsp" },
+				providers = { "treesitter", "lsp", "regex" },
 			},
 			under_cursor = false,
 		},
@@ -114,12 +113,6 @@ return {
 			)
 
 			illuminate.configure(opts)
-		end,
-	},
-	{
-		"ggandor/leap.nvim", -- text jumping (even better than easymotion)
-		config = function()
-			require("leap").add_default_mappings()
 		end,
 	},
 	{
@@ -143,5 +136,15 @@ return {
 		"cappyzawa/trim.nvim", -- automatically trim trailing whitespace
 		event = { "BufReadPre", "BufNewFile" },
 		opts = {},
+	},
+	{
+		"jinh0/eyeliner.nvim", -- quickscope f/F jumping
+		event = { "BufReadPre", "BufNewFile" },
+		config = function()
+			require("eyeliner").setup({
+				highlight_on_key = true,
+				dim = false,
+			})
+		end,
 	},
 }
