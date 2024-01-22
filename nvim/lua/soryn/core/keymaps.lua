@@ -16,9 +16,6 @@ km.set("v", "<leader>p", '"_dP', { desc = "Paste text without yanking selected" 
 -- change undo bindings to all be on one key
 km.set("n", "<S-u>", "<C-r>", { desc = "Redo" })
 
--- restore cursor after yanking
-km.set({ "n", "v" }, "y", "ygv<ESC>")
-
 -- easier window navigation
 km.set("n", "<C-h>", "<C-w>h", { desc = "Move to left window" })
 km.set("n", "<C-j>", "<C-w>j", { desc = "Move to bottom window" })
@@ -88,6 +85,7 @@ km.set("v", "<M-j>", ":MoveBlock 1<CR>", { desc = "Move block down", silent = tr
 
 -- toggle error/warning overview
 km.set("n", "<leader>cd", "<CMD>TroubleToggle<CR>", { desc = "Toggle code diagnostics", silent = true })
+km.set("n", "<leader>cD", vim.diagnostic.reset, { desc = "Reset stuck diagnostics", silent = true, noremap = true })
 
 -- toggleable terminal
 km.set({ "n", "t" }, "<F12>", "<CMD>ToggleTerm<CR>", { desc = "Toggle terminal", silent = true, noremap = true })
