@@ -154,17 +154,17 @@ return {
 			},
 		},
 	},
-	{
-		"utilyre/barbecue.nvim", -- winbar
-		name = "barbecue",
-		version = "*",
-		event = { "BufReadPre", "BufNewFile" },
-		dependencies = {
-			"SmiteshP/nvim-navic",
-			"nvim-tree/nvim-web-devicons",
-		},
-		opts = {},
-	},
+	-- {
+	-- 	"utilyre/barbecue.nvim", -- winbar
+	-- 	name = "barbecue",
+	-- 	version = "*",
+	-- 	event = { "BufReadPre", "BufNewFile" },
+	-- 	dependencies = {
+	-- 		"SmiteshP/nvim-navic",
+	-- 		"nvim-tree/nvim-web-devicons",
+	-- 	},
+	-- 	opts = {},
+	-- },
 	-- {
 	-- 	"luukvbaal/statuscol.nvim", -- change statuscol
 	-- 	config = function()
