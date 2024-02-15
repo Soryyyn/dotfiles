@@ -4,7 +4,6 @@ return {
 		event = { "BufReadPre", "BufNewFile" },
 		dependencies = {
 			"mason.nvim",
-			"williamboman/mason-lspconfig.nvim",
 			"ray-x/lsp_signature.nvim",
 			"pmizio/typescript-tools.nvim",
 		},
@@ -153,12 +152,15 @@ return {
 		"williamboman/mason.nvim", -- language server installation, updating, etc
 		cmd = "Mason",
 		build = ":MasonUpdate",
+        dependencies = {
+			"williamboman/mason-lspconfig.nvim",
+        },
 		opts = {
 			ensure_installed = {
 				"stylua",
 				"shfmt",
 				"tsserver",
-				"eslint",
+				"eslint_d",
 				"prettier",
 				"emmet_ls",
 				"cssls",
@@ -171,44 +173,44 @@ return {
 			require("mason").setup(opts)
 		end,
 	},
-	{
-		"nvimtools/none-ls.nvim", -- formatting & linting
-		event = "LspAttach",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-		},
-		config = function()
-			local none_ls = require("null-ls")
-			local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
-
-			none_ls.setup({
-				sources = {
-					-- lua
-					none_ls.builtins.formatting.stylua,
-
-					-- eslint
-					none_ls.builtins.code_actions.eslint,
-					none_ls.builtins.diagnostics.eslint,
-					none_ls.builtins.formatting.eslint,
-
-					-- prettier
-					none_ls.builtins.formatting.prettier,
-				},
-				on_attach = function(client, bufnr) -- format the file on save
-					if client.supports_method("textDocument/formatting") then
-						vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-						vim.api.nvim_create_autocmd("BufWritePre", {
-							group = augroup,
-							buffer = bufnr,
-							callback = function()
-								vim.lsp.buf.format({ async = false })
-							end,
-						})
-					end
-				end,
-			})
-		end,
-	},
+	-- {
+	-- 	"nvimtools/none-ls.nvim", -- formatting & linting
+	-- 	event = "LspAttach",
+	-- 	dependencies = {
+	-- 		"nvim-lua/plenary.nvim",
+	-- 	},
+	-- 	config = function()
+	-- 		local none_ls = require("null-ls")
+	-- 		local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+	--
+	-- 		none_ls.setup({
+	-- 			sources = {
+	-- 				-- lua
+	-- 				none_ls.builtins.formatting.stylua,
+	--
+	-- 				-- eslint
+	-- 				none_ls.builtins.code_actions.eslint_d,
+	-- 				none_ls.builtins.diagnostics.eslint_d,
+	-- 				none_ls.builtins.formatting.eslint_d,
+	--
+	-- 				-- prettier
+	-- 				none_ls.builtins.formatting.prettier,
+	-- 			},
+	-- 			on_attach = function(client, bufnr) -- format the file on save
+	-- 				if client.supports_method("textDocument/formatting") then
+	-- 					vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+	-- 					vim.api.nvim_create_autocmd("BufWritePre", {
+	-- 						group = augroup,
+	-- 						buffer = bufnr,
+	-- 						callback = function()
+	-- 							vim.lsp.buf.format({ async = false })
+	-- 						end,
+	-- 					})
+	-- 				end
+	-- 			end,
+	-- 		})
+	-- 	end,
+	-- },
 	{
 		"pmizio/typescript-tools.nvim", -- additional typescript lsp tooling
 		event = "LspAttach",
