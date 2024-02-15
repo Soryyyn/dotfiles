@@ -157,6 +157,13 @@ return {
 			ensure_installed = {
 				"stylua",
 				"shfmt",
+				"tsserver",
+				"eslint",
+				"prettier",
+				"emmet_ls",
+				"cssls",
+				"html",
+				"tailwindcss",
 			},
 			automatic_installation = true,
 		},
@@ -180,12 +187,12 @@ return {
 					none_ls.builtins.formatting.stylua,
 
 					-- eslint
-					none_ls.builtins.code_actions.eslint_d,
-					none_ls.builtins.diagnostics.eslint_d,
-					none_ls.builtins.formatting.eslint_d,
+					none_ls.builtins.code_actions.eslint,
+					none_ls.builtins.diagnostics.eslint,
+					none_ls.builtins.formatting.eslint,
 
 					-- prettier
-					none_ls.builtins.formatting.prettierd,
+					none_ls.builtins.formatting.prettier,
 				},
 				on_attach = function(client, bufnr) -- format the file on save
 					if client.supports_method("textDocument/formatting") then
@@ -217,6 +224,10 @@ return {
 			"neovim/nvim-lspconfig",
 		},
 		event = "VeryLazy",
+		opts = {
+			grace_period = 60 * 3, -- 3 minutes
+			notifications = true,
+		},
 	},
 	{
 		"antosha417/nvim-lsp-file-operations", -- trigger lsp actions when moving/renaming files
