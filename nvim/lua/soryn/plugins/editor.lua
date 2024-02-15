@@ -8,7 +8,6 @@ return {
 	},
 	{
 		"themaxmarchuk/tailwindcss-colors.nvim", -- use tailwind lsp to highlight colors
-		event = "LspAttach",
 		name = "tailwindcss-colors",
 		config = function()
 			require("tailwindcss-colors").setup()

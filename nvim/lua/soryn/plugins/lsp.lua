@@ -225,7 +225,6 @@ return {
 		},
 		event = "VeryLazy",
 		opts = {
-			grace_period = 60 * 3, -- 3 minutes
 			notifications = true,
 		},
 	},
