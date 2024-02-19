@@ -131,8 +131,8 @@ return {
 					lspconfig["tailwindcss"].setup({
 						capabilities = opts.capabilities,
 						on_attach = function(_, bufnr)
-							on_attach(_, bufnr)
 							require("tailwindcss-colors").buf_attach(bufnr)
+							on_attach(_, bufnr)
 						end,
 					})
 				end,
@@ -152,9 +152,9 @@ return {
 		"williamboman/mason.nvim", -- language server installation, updating, etc
 		cmd = "Mason",
 		build = ":MasonUpdate",
-        dependencies = {
+		dependencies = {
 			"williamboman/mason-lspconfig.nvim",
-        },
+		},
 		opts = {
 			ensure_installed = {
 				"stylua",
