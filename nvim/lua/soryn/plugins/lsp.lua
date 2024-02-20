@@ -3,7 +3,7 @@ return {
 		"neovim/nvim-lspconfig", -- language server configuration
 		event = { "BufReadPre", "BufNewFile" },
 		dependencies = {
-			"mason.nvim",
+			"williamboman/mason.nvim",
 			"ray-x/lsp_signature.nvim",
 			"pmizio/typescript-tools.nvim",
 		},
