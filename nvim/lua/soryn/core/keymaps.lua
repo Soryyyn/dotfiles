@@ -26,30 +26,6 @@ km.set("n", "<C-l>", "<C-w>l", { desc = "Move to right window" })
 km.set("n", "<tab>", "<CMD>bnext<CR>", { desc = "Next buffer", silent = true })
 km.set("n", "<S-tab>", "<CMD>bprev<CR>", { desc = "Previous buffer", silent = true })
 
--- buffer selecting, closing, etc.
--- km.set(
--- 	"n",
--- 	"<leader>bd",
--- 	"<CMD>lua MiniBufremove.delete(0)<CR>",
--- 	{ desc = "Close current buffer", silent = true }
--- )
--- km.set(
--- 	"n",
--- 	"<leader>bD",
--- 	"<CMD>lua MiniBufremove.delete(0, true)<CR>",
--- 	{ desc = "Close current buffer (force)", silent = true }
--- )
--- km.set("n", "<leader>bp", "<CMD>BufferLinePick<CR>", { desc = "Pick from open buffers", silent = true })
--- km.set("n", "<leader>bP", "<CMD>BufferLineTogglePin<CR>", { desc = "Pin buffer", silent = true })
--- km.set(
--- 	"n",
--- 	"<leader>bc",
--- 	"<CMD>BufferLineCloseOthers<CR>",
--- 	{ desc = "Close all buffers except active one", silent = true }
--- )
--- km.set("n", "<leader>bl", "<CMD>BufferLineCloseRight<CR>", { desc = "Close all buffers right", silent = true })
--- km.set("n", "<leader>bh", "<CMD>BufferLineCloseLeft<CR>", { desc = "Close all buffers left", silent = true })
-
 -- telescope bindings
 km.set("n", "<leader>ff", "<CMD>Telescope find_files<CR>", { desc = "Find files in cwd" })
 km.set("n", "<leader>fs", "<CMD>Telescope live_grep<CR>", { desc = "Find string in cwd" })
