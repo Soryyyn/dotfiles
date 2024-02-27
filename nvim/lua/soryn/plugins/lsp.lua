@@ -166,6 +166,7 @@ return {
                 "cssls",
                 "html",
                 "tailwindcss",
+                "codespell"
             },
             automatic_installation = true,
         },
