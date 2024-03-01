@@ -131,7 +131,6 @@ return {
                     lspconfig["tailwindcss"].setup({
                         capabilities = opts.capabilities,
                         on_attach = function(_, bufnr)
-                            require("tailwindcss-colors").buf_attach(bufnr)
                             on_attach(_, bufnr)
                         end,
                     })
@@ -160,7 +159,7 @@ return {
                 "stylua",
                 "shfmt",
                 "tsserver",
-                "eslint_d",
+                "eslint-lsp",
                 "prettier",
                 "emmet_ls",
                 "cssls",
