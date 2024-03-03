@@ -72,7 +72,7 @@ return {
 	},
 	{
 		"stevearc/qf_helper.nvim", -- makes navigating and using quickfix lists easier
-		event = { "BufReadPre", "BufNewFile" },
+		event = "VeryLazy",
 		config = function()
 			require("qf_helper").setup({})
 		end,

@@ -46,14 +46,16 @@ return {
         dependencies = {
             "nvim-lua/plenary.nvim",
             "nvim-tree/nvim-web-devicons",
+            "natecraddock/telescope-zf-native.nvim",
             {
-                "nvim-telescope/telescope-fzf-native.nvim",
-                build = "make",
+                "nvim-telescope/telescope-live-grep-args.nvim",
+                version = "^1.0.0",
             },
         },
         config = function()
             local telescope = require("telescope")
             local actions = require("telescope.actions")
+            local lga_actions = require("telescope-live-grep-args.actions")
 
             telescope.setup({
                 defaults = {
@@ -84,9 +86,25 @@ return {
                         },
                     },
                 },
+                extensions = {
+                    live_grep_args = {
+                        auto_quoting = true,
+                        mappings = {
+                            i = {
+                                ["<C-k>"] = lga_actions.quote_prompt(),
+                                ["<C-i>"] = lga_actions.quote_prompt({ postfix = " --iglob " }),
+                                ["<C-t>"] = lga_actions.quote_prompt({ postfix = " -t" }),
+                            },
+                        }
+                    },
+                }
             })
 
-            telescope.load_extension("fzf")
+            -- better fuzzy sorting
+            telescope.load_extension("zf-native")
+
+            -- pass args and more to ripgrep (live grep)
+            telescope.load_extension("live_grep_args")
         end,
     },
     {

@@ -28,7 +28,7 @@ km.set("n", "<S-tab>", "<CMD>bprev<CR>", { desc = "Previous buffer", silent = tr
 
 -- telescope bindings
 km.set("n", "<leader>ff", "<CMD>Telescope find_files<CR>", { desc = "Find files in cwd" })
-km.set("n", "<leader>fs", "<CMD>Telescope live_grep<CR>", { desc = "Find string in cwd" })
+km.set("n", "<leader>fs", "<CMD>Telescope live_grep_args<CR>", { desc = "Find string in cwd" })
 km.set("n", "<leader>fc", "<CMD>Telescope grep_string<CR>", { desc = "Find string under cursor in cwd" })
 km.set("n", "<leader>fb", "<CMD>Telescope buffers<CR>", { desc = "Find open buffers" })
 km.set("n", "<leader>ft", "<CMD>TodoTelescope<CR>", { desc = "Find TODO comments (and more)" })

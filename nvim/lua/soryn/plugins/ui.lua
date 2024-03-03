@@ -165,7 +165,7 @@ return {
                             key = "f",
                         },
                         { action = "Telescope oldfiles", desc = " Recent files", icon = " ", key = "r" },
-                        { action = "Telescope live_grep", desc = " Find text", icon = " ", key = "t" },
+                        { action = "Telescope live_grep_args", desc = " Find text", icon = " ", key = "t" },
                         { action = "LazyGit", desc = " Repo (lazygit)", icon = " ", key = "g" },
                         {
                             action = 'lua require("persistence").load()',
