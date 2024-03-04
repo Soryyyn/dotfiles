@@ -88,12 +88,12 @@ return {
         config = function()
             require("gitsigns").setup({
                 signs = {
-                    add = { text = "+" },
-                    untracked = { text = "+" },
-                    change = { text = "~" },
-                    changedelete = { text = "~" },
-                    delete = { text = "-" },
-                    topdelete = { text = "-" },
+                    add = { text = "▍" },
+                    untracked = { text = "▍" },
+                    change = { text = "▍" },
+                    changedelete = { text = "▍" },
+                    delete = { text = "▶" },
+                    topdelete = { text = "▶" },
                 },
                 current_line_blame = true,
             })
