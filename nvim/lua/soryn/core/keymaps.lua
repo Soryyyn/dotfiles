@@ -22,10 +22,6 @@ km.set("n", "<C-j>", "<C-w>j", { desc = "Move to bottom window" })
 km.set("n", "<C-k>", "<C-w>k", { desc = "Move to top window" })
 km.set("n", "<C-l>", "<C-w>l", { desc = "Move to right window" })
 
--- switch buffers
-km.set("n", "<tab>", "<CMD>bnext<CR>", { desc = "Next buffer", silent = true })
-km.set("n", "<S-tab>", "<CMD>bprev<CR>", { desc = "Previous buffer", silent = true })
-
 -- telescope bindings
 km.set("n", "<leader>ff", "<CMD>Telescope find_files<CR>", { desc = "Find files in cwd" })
 km.set("n", "<leader>fs", "<CMD>Telescope live_grep_args<CR>", { desc = "Find string in cwd" })
@@ -65,6 +61,7 @@ km.set("n", "<leader>cD", vim.diagnostic.reset, { desc = "Reset stuck diagnostic
 
 -- toggleable terminal
 km.set({ "n", "t" }, "<F12>", "<CMD>ToggleTerm<CR>", { desc = "Toggle terminal", silent = true, noremap = true })
+km.set("t", "<ESC>", "<C-\\><C-n>", { desc = "Exit terminal (insert) mode inside terminal" })
 
 -- quickfix navigation
 km.set("n", "<leader>qq", "<CMD>QFToggle<CR>", { desc = "Toggle quickfix list" })
@@ -79,8 +76,13 @@ km.set("n", "<leader>rw", "<CMD>SearchReplaceSingleBufferCWord<CR>", { desc = "R
 km.set("n", "<leader>rW", "<CMD>SearchReplaceSingleBufferCWORD<CR>", { desc = "Replace current WORD" })
 
 -- ai suggestions
-km.set('i', '<TAB>', function () return vim.fn['codeium#Accept']() end, { expr = true, silent = true, nowait = true, desc = "Accept codeium result" })
-km.set('i', '<M-]>', function () return vim.fn['codeium#CycleCompletions'](1) end, { expr = true, silent = true, nowait = true, desc = "Cycle codeium suggestion +1"})
-km.set('i', '<M-[>', function () return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true, silent = true, nowait = true, desc = "Cycle codeium suggestion -1"})
-km.set('i', '<M-s>', function () return vim.fn['codeium#Complete']() end, { expr = true, silent = true, nowait = true, desc = "Trigger codeium suggestion"})
-km.set('i', '<M-x>', function () return vim.fn['codeium#Clear']() end, { expr = true, silent = true, nowait = true, desc = "Clear codeium suggestion"})
+km.set('i', '<TAB>', function() return vim.fn['codeium#Accept']() end,
+    { expr = true, silent = true, nowait = true, desc = "Accept codeium result" })
+km.set('i', '<M-]>', function() return vim.fn['codeium#CycleCompletions'](1) end,
+    { expr = true, silent = true, nowait = true, desc = "Cycle codeium suggestion +1" })
+km.set('i', '<M-[>', function() return vim.fn['codeium#CycleCompletions'](-1) end,
+    { expr = true, silent = true, nowait = true, desc = "Cycle codeium suggestion -1" })
+km.set('i', '<M-s>', function() return vim.fn['codeium#Complete']() end,
+    { expr = true, silent = true, nowait = true, desc = "Trigger codeium suggestion" })
+km.set('i', '<M-x>', function() return vim.fn['codeium#Clear']() end,
+    { expr = true, silent = true, nowait = true, desc = "Clear codeium suggestion" })

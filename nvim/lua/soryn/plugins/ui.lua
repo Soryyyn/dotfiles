@@ -1,5 +1,19 @@
 return {
     {
+        "stevearc/oil.nvim", -- file explorer like buffer
+        dependencies = {
+            "nvim-tree/nvim-web-devicons"
+        },
+        config = function()
+            require("oil").setup({
+                skip_confirm_for_simple_edits = true,
+                view_options = {
+                    show_hidden = true,
+                }
+            })
+        end
+    },
+    {
         "stevearc/dressing.nvim", -- better ui
         event = "VeryLazy",
     },
