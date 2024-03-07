@@ -86,3 +86,15 @@ km.set('i', '<M-s>', function() return vim.fn['codeium#Complete']() end,
     { expr = true, silent = true, nowait = true, desc = "Trigger codeium suggestion" })
 km.set('i', '<M-x>', function() return vim.fn['codeium#Clear']() end,
     { expr = true, silent = true, nowait = true, desc = "Clear codeium suggestion" })
+
+-- window splitting
+km.set("n", "<leader>wv", "<C-w>v", { desc = "Vertically split window" })
+km.set("n", "<leader>wh", "<C-w>s", { desc = "Horizontally split window" })
+
+-- swap windows
+km.set("n", "<leader>ws", "<C-w>x", { desc = "Swap windows" })
+
+-- windows sizing
+km.set("n", "<leader>we", "<C-w>=", { desc = "Equally size windows" })
+km.set("n", "<leader>ww", "<C-w>|", { desc = "Max out window width" })
+km.set("n", "<leader>wh", "<C-w>_", { desc = "Max out window height" })

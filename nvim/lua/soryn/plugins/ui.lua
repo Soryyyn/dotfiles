@@ -46,6 +46,7 @@ return {
                 ["<leader>s"] = { name = "+session" },
                 ["<leader>q"] = { name = "+quickfix" },
                 ["<leader>r"] = { name = "+replace" },
+                ["<leader>w"] = { name = "+window" },
             },
         },
         config = function(_, opts)
