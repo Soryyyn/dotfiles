@@ -61,7 +61,7 @@ km.set("n", "<leader>cD", vim.diagnostic.reset, { desc = "Reset stuck diagnostic
 
 -- toggleable terminal
 km.set({ "n", "t" }, "<F12>", "<CMD>ToggleTerm<CR>", { desc = "Toggle terminal", silent = true, noremap = true })
-km.set("t", "<ESC>", "<C-\\><C-n>", { desc = "Exit terminal (insert) mode inside terminal" })
+km.set("t", "<F8>", "<C-\\><C-n>", { desc = "Exit terminal (insert) mode inside terminal" })
 
 -- quickfix navigation
 km.set("n", "<leader>qq", "<CMD>QFToggle<CR>", { desc = "Toggle quickfix list" })
