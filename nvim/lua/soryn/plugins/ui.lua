@@ -39,9 +39,7 @@ return {
         "folke/which-key.nvim", -- show popup for shortcut help
         opts = {
             defaults = {
-                ["<leader>b"] = { name = "+buffer" },
                 ["<leader>c"] = { name = "+code" },
-                ["<leader>g"] = { name = "+git" },
                 ["<leader>f"] = { name = "+file/find" },
                 ["<leader>s"] = { name = "+session" },
                 ["<leader>q"] = { name = "+quickfix" },

@@ -25,15 +25,15 @@ km.set("n", "<C-l>", "<C-w>l", { desc = "Move to right window" })
 -- telescope bindings
 km.set("n", "<leader>ff", "<CMD>Telescope find_files<CR>", { desc = "Find files in cwd" })
 km.set("n", "<leader>fs", "<CMD>Telescope live_grep_args<CR>", { desc = "Find string in cwd" })
-km.set("n", "<leader>fc", "<CMD>Telescope grep_string<CR>", { desc = "Find string under cursor in cwd" })
+km.set("n", "<leader>fw", "<CMD>Telescope grep_string<CR>", { desc = "Find string under cursor in cwd" })
 km.set("n", "<leader>fb", "<CMD>Telescope buffers<CR>", { desc = "Find open buffers" })
-km.set("n", "<leader>ft", "<CMD>TodoTelescope<CR>", { desc = "Find TODO comments (and more)" })
+
+-- open file tree/explorer
+km.set("n", "<leader>ft", "<CMD>Neotree toggle<CR>", { desc = "Toggle filetree" })
+km.set("n", "<leader>fe", "<CMD>Oil<CR>", { desc = "Toggle file explorer", silent = true, noremap = true })
 
 -- lazygit
-km.set("n", "<leader>gg", "<CMD>LazyGit<CR>", { desc = "Open LazyGit" })
-
--- open filetree
-km.set("n", "<leader><space>", "<CMD>Neotree toggle<CR>", { desc = "Open filetree" })
+km.set("n", "<leader>g", "<CMD>LazyGit<CR>", { desc = "Open LazyGit" })
 
 -- Change window sizes easier
 km.set("n", "<C-Up>", "<C-w>+", { desc = "Increase window height", noremap = true, silent = true })
@@ -98,6 +98,3 @@ km.set("n", "<leader>ws", "<C-w>x", { desc = "Swap windows" })
 km.set("n", "<leader>we", "<C-w>=", { desc = "Equally size windows" })
 km.set("n", "<leader>ww", "<C-w>|", { desc = "Max out window width" })
 km.set("n", "<leader>wh", "<C-w>_", { desc = "Max out window height" })
-
--- oil file explorer
-km.set("n", "<leader>fe", "<CMD>Oil<CR>", { desc = "File explorer (oil)", silent = true, noremap = true })
