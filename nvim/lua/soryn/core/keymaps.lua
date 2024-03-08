@@ -98,3 +98,6 @@ km.set("n", "<leader>ws", "<C-w>x", { desc = "Swap windows" })
 km.set("n", "<leader>we", "<C-w>=", { desc = "Equally size windows" })
 km.set("n", "<leader>ww", "<C-w>|", { desc = "Max out window width" })
 km.set("n", "<leader>wh", "<C-w>_", { desc = "Max out window height" })
+
+-- oil file explorer
+km.set("n", "<leader>fe", "<CMD>Oil<CR>", { desc = "File explorer (oil)", silent = true, noremap = true })
