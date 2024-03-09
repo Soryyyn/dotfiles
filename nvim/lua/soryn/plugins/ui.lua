@@ -173,20 +173,20 @@ return {
                     center = {
                         {
                             action = "Telescope find_files",
-                            desc = " Find files",
+                            desc = " Find [F]iles",
                             icon = " ",
                             key = "f",
                         },
-                        { action = "Telescope oldfiles", desc = " Recent files", icon = " ", key = "r" },
-                        { action = "Telescope live_grep_args", desc = " Find text", icon = " ", key = "t" },
-                        { action = "LazyGit", desc = " Repo (lazygit)", icon = " ", key = "g" },
+                        { action = "Telescope live_grep_args", desc = " Find [S]tring", icon = " ", key = "s" },
+                        { action = "Oil", desc = " File [E]xplorer", icon = " ", key = "e" },
+                        { action = "LazyGit", desc = " Lazy[G]it repo", icon = " ", key = "g" },
                         {
                             action = 'lua require("persistence").load()',
-                            desc = " Restore session",
+                            desc = " [R]estore session",
                             icon = " ",
-                            key = "s",
+                            key = "r",
                         },
-                        { action = "Lazy", desc = " Lazy", icon = "󰒲 ", key = "l" },
+                        { action = "Lazy", desc = " [L]azy", icon = "󰒲 ", key = "l" },
                     },
                 },
             })
