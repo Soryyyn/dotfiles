@@ -18,6 +18,7 @@ return {
 					yaml = { { "biome", "prettier", "prettierd" } },
 					markdown = { { "biome", "prettier", "prettierd" } },
 					lua = { "stylua" },
+					rust = { "rustfmt" },
 					["_"] = { "trim_whitespace" },
 					["*"] = { "codespell" },
 				},
