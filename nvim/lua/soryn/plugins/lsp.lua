@@ -227,10 +227,15 @@ return {
         opts = {
             progress = {
                 display = {
-                    render_limit = 6,
-                    done_ttl = 1,
+                    render_limit = 8, -- max msgs to show
+                    done_ttl = 2,     -- how long done msgs should still be visible
                 },
             },
+            notification = {
+                window = {
+                    winblend = 0 -- make notificatin window transparent
+                }
+            }
         },
     },
 }
