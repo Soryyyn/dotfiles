@@ -10,7 +10,7 @@ return {
         cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
         config = function()
             require("nvim-treesitter.configs").setup({
-                ensure_installed = { "lua", "typescript", "javascript", "html", "json", "markdown" }, -- make sure the following parser are installed
+                ensure_installed = { "lua", "typescript", "javascript", "html", "json", "markdown", "astro" }, -- make sure the following parser are installed
                 sync_install = false,
                 auto_install = true,
                 indent = {
