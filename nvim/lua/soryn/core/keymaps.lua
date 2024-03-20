@@ -89,10 +89,10 @@ km.set('i', '<M-x>', function() return vim.fn['codeium#Clear']() end,
 
 -- window splitting
 km.set("n", "<leader>wv", "<C-w>v", { desc = "Vertically split window" })
-km.set("n", "<leader>wh", "<C-w>s", { desc = "Horizontally split window" })
+km.set("n", "<leader>ws", "<C-w>s", { desc = "Horizontally split window" })
 
 -- swap windows
-km.set("n", "<leader>ws", "<C-w>x", { desc = "Swap windows" })
+km.set("n", "<leader>wx", "<C-w>x", { desc = "Swap windows" })
 
 -- windows sizing
 km.set("n", "<leader>we", "<C-w>=", { desc = "Equally size windows" })
