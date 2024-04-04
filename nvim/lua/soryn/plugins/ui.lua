@@ -41,6 +41,11 @@ return {
         config = function()
             require("lualine").setup({
                 options = {
+                    component_separators = "",
+                    section_separators = {
+                        left = "",
+                        right = ""
+                    },
                     disabled_filetypes = {
                         statusline = {
                             "dashboard",
@@ -48,12 +53,26 @@ return {
                     },
                 },
                 sections = {
-                    lualine_a = { 'mode' },
-                    lualine_b = { 'branch', 'diff', 'diagnostics' },
-                    lualine_c = { { 'filename', path = 1 } },
-                    lualine_x = { 'encoding', 'filetype' },
-                    lualine_y = { 'progress' },
-                    lualine_z = { 'location' }
+                    lualine_a = {
+                        {
+                            "mode",
+                            separator = {
+                                left = ""
+                            },
+                            right_padding = 2
+                        }
+                    },
+                    lualine_b = { "filename", "branch" },
+                    lualine_c = { "%=" },
+                    lualine_x = {},
+                    lualine_y = { "filetype" },
+                    lualine_z = { "progress", {
+                        "location",
+                        separator = {
+                            right = ""
+                        },
+                        left_padding = 2
+                    } }
                 },
             })
         end,
@@ -124,12 +143,11 @@ return {
         config = function()
             require("gitsigns").setup({
                 signs = {
-                    add = { text = "▍" },
-                    untracked = { text = "▍" },
-                    change = { text = "▍" },
-                    changedelete = { text = "▍" },
-                    delete = { text = "▶" },
-                    topdelete = { text = "▶" },
+                    add = { text = "+" },
+                    change = { text = "~" },
+                    changedelete = { text = "~" },
+                    delete = { text = "_" },
+                    topdelete = { text = "‾" },
                 },
                 current_line_blame = true,
             })
@@ -168,30 +186,33 @@ return {
                 },
                 config = {
                     header = {
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        " ⣿⣿⣷⡁⢆⠈⠕⢕⢂⢕⢂⢕⢂⢔⢂⢕⢄⠂⣂⠂⠆⢂⢕⢂⢕⢂⢕⢂⢕⢂ ",
-                        " ⣿⣿⣿⡷⠊⡢⡹⣦⡑⢂⢕⢂⢕⢂⢕⢂⠕⠔⠌⠝⠛⠶⠶⢶⣦⣄⢂⢕⢂⢕ ",
-                        " ⣿⣿⠏⣠⣾⣦⡐⢌⢿⣷⣦⣅⡑⠕⠡⠐⢿⠿⣛⠟⠛⠛⠛⠛⠡⢷⡈⢂⢕⢂ ",
-                        " ⠟⣡⣾⣿⣿⣿⣿⣦⣑⠝⢿⣿⣿⣿⣿⣿⡵⢁⣤⣶⣶⣿⢿⢿⢿⡟⢻⣤⢑⢂ ",
-                        " ⣾⣿⣿⡿⢟⣛⣻⣿⣿⣿⣦⣬⣙⣻⣿⣿⣷⣿⣿⢟⢝⢕⢕⢕⢕⢽⣿⣿⣷⣔ ",
-                        " ⣿⣿⠵⠚⠉⢀⣀⣀⣈⣿⣿⣿⣿⣿⣿⣿⣿⣿⣗⢕⢕⢕⢕⢕⢕⣽⣿⣿⣿⣿ ",
-                        " ⢷⣂⣠⣴⣾⡿⡿⡻⡻⣿⣿⣴⣿⣿⣿⣿⣿⣿⣷⣵⣵⣵⣷⣿⣿⣿⣿⣿⣿⡿ ",
-                        " ⢌⠻⣿⡿⡫⡪⡪⡪⡪⣺⣿⣿⣿⣿⣿⠿⠿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃ ",
-                        " ⠣⡁⠹⡪⡪⡪⡪⣪⣾⣿⣿⣿⣿⠋⠐⢉⢍⢄⢌⠻⣿⣿⣿⣿⣿⣿⣿⣿⠏⠈ ",
-                        " ⡣⡘⢄⠙⣾⣾⣾⣿⣿⣿⣿⣿⣿⡀⢐⢕⢕⢕⢕⢕⡘⣿⣿⣿⣿⣿⣿⠏⠠⠈ ",
-                        " ⠌⢊⢂⢣⠹⣿⣿⣿⣿⣿⣿⣿⣿⣧⢐⢕⢕⢕⢕⢕⢅⣿⣿⣿⣿⡿⢋⢜⠠⠈ ",
-                        " ⠄⠁⠕⢝⡢⠈⠻⣿⣿⣿⣿⣿⣿⣿⣷⣕⣑⣑⣑⣵⣿⣿⣿⡿⢋⢔⢕⣿⠠⠈ ",
-                        " ⠨⡂⡀⢑⢕⡅⠂⠄⠉⠛⠻⠿⢿⣿⣿⣿⣿⣿⣿⣿⣿⡿⢋⢔⢕⢕⣿⣿⠠⠈ ",
-                        " ⠄⠪⣂⠁⢕⠆⠄⠂⠄⠁⡀⠂⡀⠄⢈⠉⢍⢛⢛⢛⢋⢔⢕⢕⢕⣽⣿⣿⠠⠈ ",
-                        "",
-                        "",
+                        [[]],
+                        [[]],
+                        [[                                                   ]],
+                        [[                                              ___  ]],
+                        [[                                           ,o88888 ]],
+                        [[                                        ,o8888888' ]],
+                        [[                  ,:o:o:oooo.        ,8O88Pd8888"  ]],
+                        [[              ,.::.::o:ooooOoOoO. ,oO8O8Pd888'"    ]],
+                        [[            ,.:.::o:ooOoOoOO8O8OOo.8OOPd8O8O"      ]],
+                        [[           , ..:.::o:ooOoOOOO8OOOOo.FdO8O8"        ]],
+                        [[          , ..:.::o:ooOoOO8O888O8O,COCOO"          ]],
+                        [[         , . ..:.::o:ooOoOOOO8OOOOCOCO"            ]],
+                        [[          . ..:.::o:ooOoOoOO8O8OCCCC"o             ]],
+                        [[             . ..:.::o:ooooOoCoCCC"o:o             ]],
+                        [[             . ..:.::o:o:,cooooCo"oo:o:            ]],
+                        [[          `   . . ..:.:cocoooo"'o:o:::'            ]],
+                        [[          .`   . ..::ccccoc"'o:o:o:::'             ]],
+                        [[         :.:.    ,c:cccc"':.:.:.:.:.'              ]],
+                        [[       ..:.:"'`::::c:"'..:.:.:.:.:.'               ]],
+                        [[     ...:.'.:.::::"'    . . . . .'                 ]],
+                        [[    .. . ....:."' `   .  . . ''                    ]],
+                        [[  . . . ...."'                                     ]],
+                        [[  .. . ."'                                         ]],
+                        [[ .                                                 ]],
+                        [[                                                   ]],
+                        [[]],
+                        [[]],
                     },
                     center = {
                         {

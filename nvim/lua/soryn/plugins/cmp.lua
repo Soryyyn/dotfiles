@@ -32,7 +32,7 @@ return {
                     end,
                 },
                 mapping = cmp.mapping.preset.insert({
-                    ["<C-Space>"] = cmp.mapping.complete(), -- show cmp
+                    ["<C-Space>"] = cmp.mapping.complete(),     -- show cmp
                     ["<C-k>"] = cmp.mapping.select_prev_item(), -- previous suggestion
                     ["<C-j>"] = cmp.mapping.select_next_item(), -- next suggestion
                     ["<C-p>"] = cmp.mapping.scroll_docs(-4),

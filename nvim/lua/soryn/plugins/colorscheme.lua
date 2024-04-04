@@ -76,5 +76,10 @@ return {
                 italic_comments = true
             })
         end
+    },
+    {
+        "nyoom-engineering/oxocarbon.nvim",
+        lazy = false,
+        priority = 1000,
     }
 }
