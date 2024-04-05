@@ -81,5 +81,20 @@ return {
         "nyoom-engineering/oxocarbon.nvim",
         lazy = false,
         priority = 1000,
+    },
+    {
+        "catppuccin/nvim",
+        lazy = false,
+        priority = 1000,
+        config = function()
+            require("catppuccin").setup({
+                flavour = "mocha",
+                styles = {
+                    comments = { "italic" },
+                    keywords = { "bold" },
+                    types = { "italic", "bold" },
+                }
+            })
+        end
     }
 }
