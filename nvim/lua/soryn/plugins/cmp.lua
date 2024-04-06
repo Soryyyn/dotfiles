@@ -10,11 +10,8 @@ return {
             "saadparwaiz1/cmp_luasnip",
             "L3MON4D3/LuaSnip",
             "rafamadriz/friendly-snippets",
+            "luckasRanarison/tailwind-tools.nvim",
             "onsails/lspkind.nvim",
-            {
-                "js-everts/cmp-tailwind-colors",
-                config = true,
-            },
         },
         opts = function()
             local cmp = require("cmp")
@@ -52,10 +49,7 @@ return {
                         mode = "symbol_text",
                         maxwidth = 35,
                         ellipsis_char = "...",
-                        before = function(entry, vim_item)
-                            vim_item = require("cmp-tailwind-colors").format(entry, vim_item)
-                            return vim_item
-                        end,
+                        before = require("tailwind-tools.cmp").lspkind_format
                     }),
                 },
                 sorting = default_cmp_settings.sorting,

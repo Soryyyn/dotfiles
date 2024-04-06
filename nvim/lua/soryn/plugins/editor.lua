@@ -1,15 +1,9 @@
 return {
     {
-        "JosefLitos/colorizer.nvim", -- color the background of colors (using fork currently for tailwind colors)
+        "NvChad/nvim-colorizer.lua", -- color the background of colors (using fork currently for tailwind colors)
         event = { "BufReadPre", "BufNewFile" },
         config = function()
-            require("colorizer").setup({
-                user_default_options = {
-                    css = true,
-                    css_fn = true,
-                    names = 'tailwind_both',
-                }
-            })
+            require("colorizer").setup({})
         end,
     },
     {

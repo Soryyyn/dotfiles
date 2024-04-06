@@ -131,15 +131,6 @@ return {
                     })
                 end,
 
-                ["tailwindcss"] = function()
-                    lspconfig["tailwindcss"].setup({
-                        capabilities = opts.capabilities,
-                        on_attach = function(_, bufnr)
-                            on_attach(_, bufnr)
-                        end,
-                    })
-                end,
-
                 ["tsserver"] = function()
                     require("typescript-tools").setup({
                         on_attach = on_attach,
@@ -201,6 +192,18 @@ return {
             "neovim/nvim-lspconfig",
         },
         opts = {},
+    },
+    {
+        "luckasRanarison/tailwind-tools.nvim", -- tailwind utilities with lsp
+        dependencies = {
+            "nvim-treesitter/nvim-treesitter"
+        },
+        event = { "BufReadPre", "BufNewFile" },
+        opts = {
+            document_color = {
+                kind = "background"
+            }
+        }
     },
     {
         "zeioth/garbage-day.nvim", -- free RAM by stopping lsp when idled to long
