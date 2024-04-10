@@ -176,6 +176,17 @@ return {
 		},
 	},
 	{
+		"xiyaowong/transparent.nvim", -- transparency
+		config = function()
+			require("transparent").setup({
+				exclude_groups = {
+					"CursorLine",
+					"CursorLineNr",
+				},
+			})
+		end,
+	},
+	{
 		"nvimdev/dashboard-nvim", -- better start screen
 		event = "VimEnter",
 		dependencies = {
