@@ -29,16 +29,20 @@ return {
                 textobjects = {
                     enable = true,
                 },
-                autotag = {
-                    enable = true,
-                    enable_close_on_slash = false,
-                },
             })
         end,
     },
     {
         "windwp/nvim-ts-autotag", -- auto edit html tags based on treesitter context
         event = "InsertEnter",
-        opts = {},
+        config = function()
+            require("nvim-ts-autotag").setup({
+                opts = {
+                    enable_close = true,
+                    enable_rename = true,
+                    enable_close_on_slash = false
+                }
+            })
+        end
     },
 }
