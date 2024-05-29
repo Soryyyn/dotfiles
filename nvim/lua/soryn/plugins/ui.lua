@@ -19,7 +19,7 @@ return {
     },
     {
         "nvim-lualine/lualine.nvim", -- statusline
-        event = "VeryLazy",
+        event = { "BufReadPost", "BufNewFile", "VeryLazy" },
         dependencies = {
             "nvim-tree/nvim-web-devicons",
         },
@@ -27,6 +27,7 @@ return {
             require("lualine").setup({
                 options = {
                     component_separators = "",
+                    globalstatus = true,
                     section_separators = {
                         left = "",
                         right = "",
