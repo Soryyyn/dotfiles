@@ -71,6 +71,7 @@ return {
         opts = {
             defaults = {
                 ["<leader>c"] = { name = "+code" },
+                ["<leader>d"] = { name = "+diagnostics" },
                 ["<leader>f"] = { name = "+file/find" },
                 ["<leader>s"] = { name = "+session" },
                 ["<leader>q"] = { name = "+quickfix" },

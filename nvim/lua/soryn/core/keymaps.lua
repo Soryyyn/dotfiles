@@ -56,9 +56,10 @@ km.set("n", "<M-j>", ":MoveLine 1<CR>", { desc = "Move line down", silent = true
 km.set("v", "<M-k>", ":MoveBlock -1<CR>", { desc = "Move block up", silent = true, noremap = true })
 km.set("v", "<M-j>", ":MoveBlock 1<CR>", { desc = "Move block down", silent = true, noremap = true })
 
--- toggle error/warning overview
-km.set("n", "<leader>cd", "<CMD>TroubleToggle<CR>", { desc = "Toggle code diagnostics", silent = true })
-km.set("n", "<leader>cD", vim.diagnostic.reset, { desc = "Reset stuck diagnostics", silent = true, noremap = true })
+-- diagnostics
+km.set("n", "<leader>dd", "<CMD>Trouble diagnostics toggle<CR>", { desc = "Toggle code diagnostics", silent = true })
+km.set("n", "<leader>db", "<CMD>Trouble diagnostics toggle filter.buf=0<CR>",
+    { desc = "Toggle code diagnostics (curr buffer)", silent = true })
 
 -- toggleable terminal
 km.set({ "n", "t" }, "<F12>", "<CMD>ToggleTerm<CR>", { desc = "Toggle terminal", silent = true, noremap = true })
@@ -78,19 +79,19 @@ km.set("n", "<leader>rW", "<CMD>SearchReplaceSingleBufferCWORD<CR>", { desc = "R
 
 -- ai suggestions
 km.set("i", "<TAB>", function()
-	return vim.fn["codeium#Accept"]()
+    return vim.fn["codeium#Accept"]()
 end, { expr = true, silent = true, nowait = true, desc = "Accept codeium result" })
 km.set("i", "<M-]>", function()
-	return vim.fn["codeium#CycleCompletions"](1)
+    return vim.fn["codeium#CycleCompletions"](1)
 end, { expr = true, silent = true, nowait = true, desc = "Cycle codeium suggestion +1" })
 km.set("i", "<M-[>", function()
-	return vim.fn["codeium#CycleCompletions"](-1)
+    return vim.fn["codeium#CycleCompletions"](-1)
 end, { expr = true, silent = true, nowait = true, desc = "Cycle codeium suggestion -1" })
 km.set("i", "<M-s>", function()
-	return vim.fn["codeium#Complete"]()
+    return vim.fn["codeium#Complete"]()
 end, { expr = true, silent = true, nowait = true, desc = "Trigger codeium suggestion" })
 km.set("i", "<M-x>", function()
-	return vim.fn["codeium#Clear"]()
+    return vim.fn["codeium#Clear"]()
 end, { expr = true, silent = true, nowait = true, desc = "Clear codeium suggestion" })
 
 -- window splitting
