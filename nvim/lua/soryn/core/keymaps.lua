@@ -58,8 +58,12 @@ km.set("v", "<M-j>", ":MoveBlock 1<CR>", { desc = "Move block down", silent = tr
 
 -- diagnostics
 km.set("n", "<leader>dd", "<CMD>Trouble diagnostics toggle<CR>", { desc = "Toggle code diagnostics", silent = true })
-km.set("n", "<leader>db", "<CMD>Trouble diagnostics toggle filter.buf=0<CR>",
-    { desc = "Toggle code diagnostics (curr buffer)", silent = true })
+km.set(
+	"n",
+	"<leader>db",
+	"<CMD>Trouble diagnostics toggle filter.buf=0<CR>",
+	{ desc = "Toggle code diagnostics (curr buffer)", silent = true }
+)
 
 -- toggleable terminal
 km.set({ "n", "t" }, "<F12>", "<CMD>ToggleTerm<CR>", { desc = "Toggle terminal", silent = true, noremap = true })
@@ -79,24 +83,24 @@ km.set("n", "<leader>rW", "<CMD>SearchReplaceSingleBufferCWORD<CR>", { desc = "R
 
 -- ai suggestions
 km.set("i", "<TAB>", function()
-    return vim.fn["codeium#Accept"]()
+	return vim.fn["codeium#Accept"]()
 end, { expr = true, silent = true, nowait = true, desc = "Accept codeium result" })
 km.set("i", "<M-]>", function()
-    return vim.fn["codeium#CycleCompletions"](1)
+	return vim.fn["codeium#CycleCompletions"](1)
 end, { expr = true, silent = true, nowait = true, desc = "Cycle codeium suggestion +1" })
 km.set("i", "<M-[>", function()
-    return vim.fn["codeium#CycleCompletions"](-1)
+	return vim.fn["codeium#CycleCompletions"](-1)
 end, { expr = true, silent = true, nowait = true, desc = "Cycle codeium suggestion -1" })
 km.set("i", "<M-s>", function()
-    return vim.fn["codeium#Complete"]()
+	return vim.fn["codeium#Complete"]()
 end, { expr = true, silent = true, nowait = true, desc = "Trigger codeium suggestion" })
 km.set("i", "<M-x>", function()
-    return vim.fn["codeium#Clear"]()
+	return vim.fn["codeium#Clear"]()
 end, { expr = true, silent = true, nowait = true, desc = "Clear codeium suggestion" })
 
 -- window splitting
-km.set("n", "<leader>wv", "<C-w>v", { desc = "Vertically split window" })
-km.set("n", "<leader>ws", "<C-w>s", { desc = "Horizontally split window" })
+km.set("n", "<leader>w|", "<C-w>v", { desc = "Vertically split window" })
+km.set("n", "<leader>w-", "<C-w>s", { desc = "Horizontally split window" })
 
 -- swap windows
 km.set("n", "<leader>wx", "<C-w>x", { desc = "Swap windows" })
