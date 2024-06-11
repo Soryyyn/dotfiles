@@ -13,13 +13,10 @@ return {
 				svelte = { "eslint" },
 			}
 
-			local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
-
-			-- Events that trigger linting
-			vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
-				group = lint_augroup,
+			-- Lint after writing to buffer
+			vim.api.nvim_create_autocmd({ "BufWritePost" }, {
 				callback = function()
-					lint.try_lint()
+					require("lint").try_lint()
 				end,
 			})
 
