@@ -216,6 +216,7 @@ return {
 	},
 	{
 		"zeioth/garbage-day.nvim", -- free RAM by stopping lsp when idled to long
+		disabled = true,
 		dependencies = {
 			"neovim/nvim-lspconfig",
 		},
