@@ -119,5 +119,8 @@ fi
 # Change default browser to wslview -> default browser on host -> windows
 export BROWSER=wslview
 
+# Set term for colors.
+TERM=screen-256color
+
 # Change to the dev directory on the d drive after launch
 cd ~/GitHub
