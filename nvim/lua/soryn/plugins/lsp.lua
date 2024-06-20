@@ -146,6 +146,9 @@ return {
 						on_attach = on_attach,
 						settings = {
 							useFlatConfig = false,
+							workingDirectory = {
+								mode = "auto",
+							},
 						},
 					})
 				end,
