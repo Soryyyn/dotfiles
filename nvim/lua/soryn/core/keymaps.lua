@@ -81,23 +81,6 @@ km.set("n", "<leader>rr", "<CMD>SearchReplaceSingleBufferOpen<CR>", { desc = "Se
 km.set("n", "<leader>rw", "<CMD>SearchReplaceSingleBufferCWord<CR>", { desc = "Replace current word" })
 km.set("n", "<leader>rW", "<CMD>SearchReplaceSingleBufferCWORD<CR>", { desc = "Replace current WORD" })
 
--- ai suggestions
-km.set("i", "<TAB>", function()
-	return vim.fn["codeium#Accept"]()
-end, { expr = true, silent = true, nowait = true, desc = "Accept codeium result" })
-km.set("i", "<M-]>", function()
-	return vim.fn["codeium#CycleCompletions"](1)
-end, { expr = true, silent = true, nowait = true, desc = "Cycle codeium suggestion +1" })
-km.set("i", "<M-[>", function()
-	return vim.fn["codeium#CycleCompletions"](-1)
-end, { expr = true, silent = true, nowait = true, desc = "Cycle codeium suggestion -1" })
-km.set("i", "<M-s>", function()
-	return vim.fn["codeium#Complete"]()
-end, { expr = true, silent = true, nowait = true, desc = "Trigger codeium suggestion" })
-km.set("i", "<M-x>", function()
-	return vim.fn["codeium#Clear"]()
-end, { expr = true, silent = true, nowait = true, desc = "Clear codeium suggestion" })
-
 -- window splitting
 km.set("n", "<leader>w|", "<C-w>v", { desc = "Vertically split window" })
 km.set("n", "<leader>w-", "<C-w>s", { desc = "Horizontally split window" })
