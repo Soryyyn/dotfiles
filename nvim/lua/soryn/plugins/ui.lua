@@ -68,21 +68,18 @@ return {
     },
     {
         "folke/which-key.nvim", -- show popup for shortcut help
-        opts = {
-            defaults = {
-                ["<leader>c"] = { name = "+code" },
-                ["<leader>d"] = { name = "+diagnostics" },
-                ["<leader>f"] = { name = "+file/find" },
-                ["<leader>s"] = { name = "+session" },
-                ["<leader>q"] = { name = "+quickfix" },
-                ["<leader>r"] = { name = "+replace" },
-                ["<leader>w"] = { name = "+window" },
-            },
-        },
         config = function(_, opts)
             local wk = require("which-key")
             wk.setup(opts)
-            wk.register(opts.defaults)
+            wk.add({
+                { "<leader>c", group = "code" },
+                { "<leader>d", group = "diagnostics" },
+                { "<leader>f", group = "file/find" },
+                { "<leader>q", group = "quickfix" },
+                { "<leader>r", group = "replace" },
+                { "<leader>s", group = "session" },
+                { "<leader>w", group = "window" },
+            })
         end,
     },
     {
