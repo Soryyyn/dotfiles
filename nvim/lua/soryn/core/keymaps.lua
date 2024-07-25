@@ -59,10 +59,10 @@ km.set("v", "<M-j>", ":MoveBlock 1<CR>", { desc = "Move block down", silent = tr
 -- diagnostics
 km.set("n", "<leader>dd", "<CMD>Trouble diagnostics toggle<CR>", { desc = "Toggle code diagnostics", silent = true })
 km.set(
-	"n",
-	"<leader>db",
-	"<CMD>Trouble diagnostics toggle filter.buf=0<CR>",
-	{ desc = "Toggle code diagnostics (curr buffer)", silent = true }
+    "n",
+    "<leader>db",
+    "<CMD>Trouble diagnostics toggle filter.buf=0<CR>",
+    { desc = "Toggle code diagnostics (curr buffer)", silent = true }
 )
 
 -- toggleable terminal
