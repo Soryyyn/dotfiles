@@ -70,10 +70,9 @@ km.set({ "n", "t" }, "<F12>", "<CMD>ToggleTerm<CR>", { desc = "Toggle terminal",
 km.set("t", "<F8>", "<C-\\><C-n>", { desc = "Exit terminal (insert) mode inside terminal" })
 
 -- quickfix navigation
-km.set("n", "<leader>qq", "<CMD>QFToggle<CR>", { desc = "Toggle quickfix list" })
-km.set("n", "<leader>qc", "<CMD>Cclear<CR>", { desc = "Clear quickfix list" })
-km.set("n", "<leader>qj", "<CMD>QNext<CR>", { desc = "Goto next quickfix list entry" })
-km.set("n", "<leader>qk", "<CMD>QPrev<CR>", { desc = "Goto previous quickfix list entry" })
+km.set("n", "<leader>q", function()
+    require("quicker").toggle()
+end, { desc = "Toggle quickfix" })
 
 -- search & replace
 km.set("v", "<leader>r", "<CMD>SearchReplaceSingleBufferVisualSelection<CR>", { desc = "Replace selection" })

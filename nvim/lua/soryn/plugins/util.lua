@@ -64,11 +64,28 @@ return {
         },
     },
     {
-        "stevearc/qf_helper.nvim", -- makes navigating and using quickfix lists easier
+        "stevearc/quicker.nvim", -- quickfix list improvements
         event = "VeryLazy",
         config = function()
-            require("qf_helper").setup({})
-        end,
+            require("quicker").setup({
+                keys = {
+                    {
+                        ">",
+                        function()
+                            require("quicker").expand({ before = 2, after = 2, add_to_existing = true })
+                        end,
+                        desc = "Expand quickfix context",
+                    },
+                    {
+                        "<",
+                        function()
+                            require("quicker").collapse()
+                        end,
+                        desc = "Collapse quickfix context",
+                    },
+                },
+            })
+        end
     },
     {
         "roobert/search-replace.nvim", -- better search & replace
