@@ -131,7 +131,7 @@ return {
                     })
                 end,
 
-                ["tsserver"] = function()
+                ["ts_ls"] = function()
                     require("typescript-tools").setup({
                         on_attach = on_attach,
                         settings = {
