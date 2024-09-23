@@ -18,6 +18,9 @@ return {
         event = "VeryLazy",
     },
     {
+        "pnx/lualine-lsp-status", -- show lsp servers in statusline
+    },
+    {
         "nvim-lualine/lualine.nvim", -- statusline
         event = { "BufReadPost", "BufNewFile", "VeryLazy" },
         dependencies = {
@@ -51,7 +54,7 @@ return {
                     lualine_b = { "filename", "branch" },
                     lualine_c = { "diagnostics" },
                     lualine_x = {},
-                    lualine_y = { "filetype" },
+                    lualine_y = { "lsp-status", "filetype" },
                     lualine_z = {
                         "progress",
                         {

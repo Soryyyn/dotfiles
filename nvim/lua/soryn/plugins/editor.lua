@@ -98,30 +98,6 @@ return {
         end,
     },
     {
-        "RRethy/vim-illuminate", -- highlight same word when cursor is over it
-        event = { "BufReadPre", "BufNewFile" },
-        opts = {
-            large_file_cutoff = 2000,
-            large_file_overrides = {
-                providers = { "treesitter", "lsp", "regex" },
-            },
-            under_cursor = false,
-        },
-        config = function(_, opts)
-            local illuminate = require("illuminate")
-
-            -- keybindings
-            vim.keymap.set(
-                "n",
-                "<C-r>",
-                illuminate.goto_next_reference,
-                { desc = "Goto next reference", noremap = true }
-            )
-
-            illuminate.configure(opts)
-        end,
-    },
-    {
         "hinell/move.nvim", -- move lines & blocks of code
         event = { "BufReadPre", "BufNewFile" },
     },
@@ -153,4 +129,19 @@ return {
             })
         end,
     },
+    {
+        "mawkler/refjump.nvim", -- jump to references in buffer
+        keys = { "[r", "]r" },
+        opts = {}
+
+    },
+    {
+        "mawkler/demicolon.nvim", -- more ; & ,
+        keys = { ";", ",", "t", "T", "f", "F", "[", "]", "[d", "]d", "[r", "]r" },
+        dependencies = {
+            "nvim-treesitter/nvim-treesitter",
+            "nvim-treesitter/nvim-treesitter-textobjects"
+        },
+        opts = {}
+    }
 }
