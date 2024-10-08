@@ -143,5 +143,10 @@ return {
             "nvim-treesitter/nvim-treesitter-textobjects"
         },
         opts = {}
+    },
+    {
+        "Aasim-A/scrollEOF.nvim", -- scroll past eof
+        event = { "CursorMoved", "WinScrolled" },
+        opts = {},
     }
 }
