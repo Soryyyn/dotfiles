@@ -148,5 +148,13 @@ return {
         "Aasim-A/scrollEOF.nvim", -- scroll past eof
         event = { "CursorMoved", "WinScrolled" },
         opts = {},
+    },
+    {
+        "LunarVim/bigfile.nvim", -- disable features when trying to load big files
+        config = function()
+            require("bigfile").setup({
+                filesize = 3
+            })
+        end
     }
 }
