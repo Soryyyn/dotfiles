@@ -145,8 +145,21 @@ return {
                         capabilities = opts.capabilities,
                         on_attach = on_attach,
                         settings = {
-                            useFlatConfig = true
+                            useFlatConfig = true,
+                            workingDirectory = {
+                                mode = "location"
+                            }
                         },
+                        root_dir = lsputil.find_git_ancestor,
+                    })
+                end,
+
+                ["astro"] = function()
+                    lspconfig["astro"].setup({
+                        capabilities = opts.capabilities,
+                        on_attach = on_attach,
+                        filetypes = { "astro" },
+                        root_dir = lsputil.find_git_ancestor,
                     })
                 end,
 
@@ -166,6 +179,8 @@ return {
                     })
                 end,
             })
+
+            vim.api.nvim_exec_autocmds("FileType", {})
         end,
     },
     {
@@ -177,6 +192,7 @@ return {
         },
         opts = {
             ensure_installed = {
+                "astro",
                 "stylua",
                 "shfmt",
                 "tsserver",
