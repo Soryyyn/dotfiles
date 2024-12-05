@@ -137,6 +137,7 @@ return {
                         settings = {
                             expose_as_code_action = "all",
                         },
+                        root_dir = lsputil.find_git_ancestor,
                     })
                 end,
 
