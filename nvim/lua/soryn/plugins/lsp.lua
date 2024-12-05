@@ -11,16 +11,6 @@ return {
             inlay_hints = {
                 enabled = true,
             },
-            diagnostics = {
-                underline = true,
-                update_in_insert = false,
-                virtual_text = {
-                    spacing = 4,
-                    source = "if_many",
-                    prefix = "●",
-                },
-                severity_sort = true,
-            },
             capabilities = require("cmp_nvim_lsp").default_capabilities(),
         },
         config = function(_, opts)
@@ -108,6 +98,9 @@ return {
                     lspconfig[server_name].setup({
                         capabilities = opts.capabilities,
                         on_attach = on_attach,
+                        flags = {
+                            debounce_text_changes = 150
+                        }
                     })
                 end,
 

@@ -120,16 +120,6 @@ return {
         opts = {},
     },
     {
-        "jinh0/eyeliner.nvim", -- quickscope f/F jumping
-        event = { "BufReadPre", "BufNewFile" },
-        config = function()
-            require("eyeliner").setup({
-                highlight_on_key = true,
-                dim = false,
-            })
-        end,
-    },
-    {
         "mawkler/refjump.nvim", -- jump to references in buffer
         keys = { "[r", "]r" },
         opts = {}
@@ -138,11 +128,11 @@ return {
     {
         "mawkler/demicolon.nvim", -- more ; & ,
         keys = { ";", ",", "t", "T", "f", "F", "[", "]", "[d", "]d", "[r", "]r" },
+        enabled = false,
         dependencies = {
             "nvim-treesitter/nvim-treesitter",
             "nvim-treesitter/nvim-treesitter-textobjects"
         },
-        opts = {}
     },
     {
         "Aasim-A/scrollEOF.nvim", -- scroll past eof
@@ -156,5 +146,22 @@ return {
                 filesize = 3
             })
         end
+    },
+    {
+        "folke/flash.nvim", -- better code jumping
+        event = "VeryLazy",
+        opts = {
+            -- modes = {
+            --     char = {
+            --         enabled = false
+            --     }
+            -- }
+        },
+        keys = {
+            { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end,              desc = "Flash" },
+            { "S", mode = { "n", "x", "o" }, function() require("flash").treesitter() end,        desc = "Flash Treesitter" },
+            { "r", mode = "o",               function() require("flash").remote() end,            desc = "Remote Flash" },
+            { "R", mode = { "o", "x" },      function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
+        }
     }
 }
