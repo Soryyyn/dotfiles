@@ -84,13 +84,13 @@ return {
             })
         end,
     },
-    {
-        "kdheepak/lazygit.nvim", -- lazygit inside neovim
-        event = "VeryLazy",
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-        },
-    },
+    -- {
+    --     "kdheepak/lazygit.nvim", -- lazygit inside neovim
+    --     event = "VeryLazy",
+    --     dependencies = {
+    --         "nvim-lua/plenary.nvim",
+    --     },
+    -- },
     {
         "nvim-neo-tree/neo-tree.nvim", -- filetree
         branch = "v3.x",
@@ -175,64 +175,64 @@ return {
             })
         end,
     },
-    {
-        "nvimdev/dashboard-nvim", -- better start screen
-        event = "VimEnter",
-        dependencies = {
-            "nvim-tree/nvim-web-devicons",
-        },
-        config = function()
-            require("dashboard").setup({
-                theme = "doom",
-                hide = {
-                    statusline = false,
-                },
-                config = {
-                    header = {
-                        [[]],
-                        [[]],
-                        [[]],
-                        [[]],
-                        [[]],
-                        [[ ⣇⣿⠘⣿⣿⣿⡿⡿⣟⣟⢟⢟⢝⠵⡝⣿⡿⢂⣼⣿⣷⣌⠩⡫⡻⣝⠹⢿⣿⣷ ]],
-                        [[ ⡆⣿⣆⠱⣝⡵⣝⢅⠙⣿⢕⢕⢕⢕⢝⣥⢒⠅⣿⣿⣿⡿⣳⣌⠪⡪⣡⢑⢝⣇ ]],
-                        [[ ⡆⣿⣿⣦⠹⣳⣳⣕⢅⠈⢗⢕⢕⢕⢕⢕⢈⢆⠟⠋⠉⠁⠉⠉⠁⠈⠼⢐⢕⢽ ]],
-                        [[ ⡗⢰⣶⣶⣦⣝⢝⢕⢕⠅⡆⢕⢕⢕⢕⢕⣴⠏⣠⡶⠛⡉⡉⡛⢶⣦⡀⠐⣕⢕ ]],
-                        [[ ⡝⡄⢻⢟⣿⣿⣷⣕⣕⣅⣿⣔⣕⣵⣵⣿⣿⢠⣿⢠⣮⡈⣌⠨⠅⠹⣷⡀⢱⢕ ]],
-                        [[ ⡝⡵⠟⠈⢀⣀⣀⡀⠉⢿⣿⣿⣿⣿⣿⣿⣿⣼⣿⢈⡋⠴⢿⡟⣡⡇⣿⡇⡀⢕ ]],
-                        [[ ⡝⠁⣠⣾⠟⡉⡉⡉⠻⣦⣻⣿⣿⣿⣿⣿⣿⣿⣿⣧⠸⣿⣦⣥⣿⡇⡿⣰⢗⢄ ]],
-                        [[ ⠁⢰⣿⡏⣴⣌⠈⣌⠡⠈⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣬⣉⣉⣁⣄⢖⢕⢕⢕ ]],
-                        [[ ⡀⢻⣿⡇⢙⠁⠴⢿⡟⣡⡆⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣵⣵⣿ ]],
-                        [[ ⡻⣄⣻⣿⣌⠘⢿⣷⣥⣿⠇⣿⣿⣿⣿⣿⣿⠛⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ]],
-                        [[ ⣷⢄⠻⣿⣟⠿⠦⠍⠉⣡⣾⣿⣿⣿⣿⣿⣿⢸⣿⣦⠙⣿⣿⣿⣿⣿⣿⣿⣿⠟ ]],
-                        [[ ⡕⡑⣑⣈⣻⢗⢟⢞⢝⣻⣿⣿⣿⣿⣿⣿⣿⠸⣿⠿⠃⣿⣿⣿⣿⣿⣿⡿⠁⣠ ]],
-                        [[ ⡝⡵⡈⢟⢕⢕⢕⢕⣵⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣶⣿⣿⣿⣿⣿⠿⠋⣀⣈⠙ ]],
-                        [[ ⡝⡵⡕⡀⠑⠳⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠛⢉⡠⡲⡫⡪⡪⡣ ]],
-                        [[]],
-                        [[]],
-                        [[]],
-                        [[]],
-                    },
-                    center = {
-                        {
-                            action = "Telescope find_files",
-                            desc = " Find [F]iles",
-                            icon = " ",
-                            key = "f",
-                        },
-                        { action = "Telescope live_grep_args", desc = " Find [S]tring", icon = " ", key = "s" },
-                        { action = "Oil", desc = " File [E]xplorer", icon = " ", key = "e" },
-                        { action = "LazyGit", desc = " Lazy[G]it repo", icon = " ", key = "g" },
-                        {
-                            action = 'lua require("persistence").load()',
-                            desc = " [R]estore session",
-                            icon = " ",
-                            key = "r",
-                        },
-                        { action = "Lazy", desc = " [L]azy", icon = "󰒲 ", key = "l" },
-                    },
-                },
-            })
-        end,
-    },
+    -- {
+    --     "nvimdev/dashboard-nvim", -- better start screen
+    --     event = "VimEnter",
+    --     dependencies = {
+    --         "nvim-tree/nvim-web-devicons",
+    --     },
+    --     config = function()
+    --         require("dashboard").setup({
+    --             theme = "doom",
+    --             hide = {
+    --                 statusline = false,
+    --             },
+    --             config = {
+    --                 header = {
+    --                     [[]],
+    --                     [[]],
+    --                     [[]],
+    --                     [[]],
+    --                     [[]],
+    --                     [[ ⣇⣿⠘⣿⣿⣿⡿⡿⣟⣟⢟⢟⢝⠵⡝⣿⡿⢂⣼⣿⣷⣌⠩⡫⡻⣝⠹⢿⣿⣷ ]],
+    --                     [[ ⡆⣿⣆⠱⣝⡵⣝⢅⠙⣿⢕⢕⢕⢕⢝⣥⢒⠅⣿⣿⣿⡿⣳⣌⠪⡪⣡⢑⢝⣇ ]],
+    --                     [[ ⡆⣿⣿⣦⠹⣳⣳⣕⢅⠈⢗⢕⢕⢕⢕⢕⢈⢆⠟⠋⠉⠁⠉⠉⠁⠈⠼⢐⢕⢽ ]],
+    --                     [[ ⡗⢰⣶⣶⣦⣝⢝⢕⢕⠅⡆⢕⢕⢕⢕⢕⣴⠏⣠⡶⠛⡉⡉⡛⢶⣦⡀⠐⣕⢕ ]],
+    --                     [[ ⡝⡄⢻⢟⣿⣿⣷⣕⣕⣅⣿⣔⣕⣵⣵⣿⣿⢠⣿⢠⣮⡈⣌⠨⠅⠹⣷⡀⢱⢕ ]],
+    --                     [[ ⡝⡵⠟⠈⢀⣀⣀⡀⠉⢿⣿⣿⣿⣿⣿⣿⣿⣼⣿⢈⡋⠴⢿⡟⣡⡇⣿⡇⡀⢕ ]],
+    --                     [[ ⡝⠁⣠⣾⠟⡉⡉⡉⠻⣦⣻⣿⣿⣿⣿⣿⣿⣿⣿⣧⠸⣿⣦⣥⣿⡇⡿⣰⢗⢄ ]],
+    --                     [[ ⠁⢰⣿⡏⣴⣌⠈⣌⠡⠈⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣬⣉⣉⣁⣄⢖⢕⢕⢕ ]],
+    --                     [[ ⡀⢻⣿⡇⢙⠁⠴⢿⡟⣡⡆⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣵⣵⣿ ]],
+    --                     [[ ⡻⣄⣻⣿⣌⠘⢿⣷⣥⣿⠇⣿⣿⣿⣿⣿⣿⠛⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ]],
+    --                     [[ ⣷⢄⠻⣿⣟⠿⠦⠍⠉⣡⣾⣿⣿⣿⣿⣿⣿⢸⣿⣦⠙⣿⣿⣿⣿⣿⣿⣿⣿⠟ ]],
+    --                     [[ ⡕⡑⣑⣈⣻⢗⢟⢞⢝⣻⣿⣿⣿⣿⣿⣿⣿⠸⣿⠿⠃⣿⣿⣿⣿⣿⣿⡿⠁⣠ ]],
+    --                     [[ ⡝⡵⡈⢟⢕⢕⢕⢕⣵⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣶⣿⣿⣿⣿⣿⠿⠋⣀⣈⠙ ]],
+    --                     [[ ⡝⡵⡕⡀⠑⠳⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠛⢉⡠⡲⡫⡪⡪⡣ ]],
+    --                     [[]],
+    --                     [[]],
+    --                     [[]],
+    --                     [[]],
+    --                 },
+    --                 center = {
+    --                     {
+    --                         action = "Telescope find_files",
+    --                         desc = " Find [F]iles",
+    --                         icon = " ",
+    --                         key = "f",
+    --                     },
+    --                     { action = "Telescope live_grep_args", desc = " Find [S]tring", icon = " ", key = "s" },
+    --                     { action = "Oil", desc = " File [E]xplorer", icon = " ", key = "e" },
+    --                     { action = "LazyGit", desc = " Lazy[G]it repo", icon = " ", key = "g" },
+    --                     {
+    --                         action = 'lua require("persistence").load()',
+    --                         desc = " [R]estore session",
+    --                         icon = " ",
+    --                         key = "r",
+    --                     },
+    --                     { action = "Lazy", desc = " [L]azy", icon = "󰒲 ", key = "l" },
+    --                 },
+    --             },
+    --         })
+    --     end,
+    -- },
 }

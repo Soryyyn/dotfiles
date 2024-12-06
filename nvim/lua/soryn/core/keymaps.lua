@@ -33,9 +33,6 @@ km.set("n", "<leader>fp", "<CMD>Telescope pickers<CR>", { desc = "Find previous 
 km.set("n", "<leader>ft", "<CMD>Neotree toggle<CR>", { desc = "Toggle filetree" })
 km.set("n", "<leader>fe", "<CMD>Oil<CR>", { desc = "Toggle file explorer", silent = true, noremap = true })
 
--- lazygit
-km.set("n", "<leader>g", "<CMD>LazyGit<CR>", { desc = "Open LazyGit" })
-
 -- Change window sizes easier
 km.set("n", "<C-Up>", "<C-w>+", { desc = "Increase window height", noremap = true, silent = true })
 km.set("n", "<C-Down>", "<C-w>-", { desc = "Decrease window height", noremap = true, silent = true })

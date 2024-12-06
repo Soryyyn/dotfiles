@@ -49,12 +49,6 @@ return {
                     "<CMD>Telescope lsp_type_definitions<CR>",
                     { desc = "Show type definitions", silent = true, buffer = bufnr }
                 )
-                -- vim.keymap.set(
-                --     { "n", "v" },
-                --     "<leader>ca",
-                --     vim.lsp.buf.code_action,
-                --     { desc = "See available code actions", silent = true, buffer = bufnr, noremap = true }
-                -- )
                 vim.keymap.set(
                     "n",
                     "K",

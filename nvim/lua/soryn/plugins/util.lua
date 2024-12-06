@@ -1,3 +1,7 @@
+math.randomseed(os.time())
+local shinyChance = math.random(0, 100)
+local chosenShinyOdd = math.random(0, 100)
+
 return {
     {
         "sindrets/diffview.nvim", -- better diff & merge mode
@@ -99,4 +103,35 @@ return {
         config = true,
         event = "VeryLazy",
     },
+    {
+        "folke/snacks.nvim", -- collection of utilities
+        priority = 1000,
+        lazy = false,
+        opts = {
+            dashboard = {
+                sections = {
+                    { section = "header" },
+                    { section = "keys",   gap = 1, padding = 1 },
+                    { section = "startup" },
+                    {
+                        section = "terminal",
+                        cmd = string.format("pokemon-colorscripts -r%s; sleep 1",
+                            shinyChance == chosenShinyOdd and " --shiny" or ""),
+                        random = 100,
+                        pane = 2,
+                        indent = 4,
+                        height = 30,
+                    },
+                },
+            },
+            bigfile = { enabled = true },
+            lazygit = { enabled = true },
+            quickfile = { enabled = true },
+            statuscolumn = { enabled = true },
+            words = { enabled = true },
+        },
+        keys = {
+            { "<leader>gg", function() Snacks.lazygit() end, desc = "Lazygit" },
+        }
+    }
 }
