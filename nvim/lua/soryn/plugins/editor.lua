@@ -12,12 +12,12 @@ return {
         event = "VeryLazy",
         enabled = vim.fn.has("nvim-0.10.0") == 1,
     },
-    {
-        "kylechui/nvim-surround", -- surround things a looooot easier
-        version = "*",
-        event = "VeryLazy",
-        opts = {},
-    },
+    -- {
+    --     "kylechui/nvim-surround", -- surround things a looooot easier
+    --     version = "*",
+    --     event = "VeryLazy",
+    --     opts = {},
+    -- },
     {
         "windwp/nvim-autopairs", -- automatically add pairs for (){}[]''""``
         event = "InsertEnter",
@@ -98,10 +98,6 @@ return {
         end,
     },
     {
-        "hinell/move.nvim", -- move lines & blocks of code
-        event = { "BufReadPre", "BufNewFile" },
-    },
-    {
         "axelvc/template-string.nvim", -- automatic template string converting
         event = "VeryLazy",
         opts = {},
@@ -120,23 +116,23 @@ return {
         opts = {},
     },
     {
-        "mawkler/refjump.nvim", -- jump to references in buffer
-        keys = { "[r", "]r" },
-        opts = {}
-
-    },
-    {
-        "mawkler/demicolon.nvim", -- more ; & ,
-        keys = { ";", ",", "t", "T", "f", "F", "[", "]", "[d", "]d", "[r", "]r" },
-        enabled = false,
-        dependencies = {
-            "nvim-treesitter/nvim-treesitter",
-            "nvim-treesitter/nvim-treesitter-textobjects"
-        },
-    },
-    {
         "Aasim-A/scrollEOF.nvim", -- scroll past eof
         event = { "CursorMoved", "WinScrolled" },
         opts = {},
     },
+    {
+        "echasnovski/mini.surround", -- surrounding
+        version = "*",
+        config = function()
+            require("mini.surround").setup()
+        end
+    },
+    {
+        "jinh0/eyeliner.nvim", -- make finding place to jump with f/t
+        config = function()
+            require("eyeliner").setup({
+                highlight_on_key = true
+            })
+        end
+    }
 }

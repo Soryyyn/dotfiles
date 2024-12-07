@@ -115,7 +115,7 @@ return {
                     { section = "startup" },
                     {
                         section = "terminal",
-                        cmd = string.format("pokemon-colorscripts -r%s; sleep 1",
+                        cmd = string.format("pokemon-colorscripts -r%s; sleep 0.5",
                             shinyChance == chosenShinyOdd and " --shiny" or ""),
                         random = 100,
                         pane = 2,
@@ -131,7 +131,9 @@ return {
             words = { enabled = true },
         },
         keys = {
-            { "<leader>gg", function() Snacks.lazygit() end, desc = "Lazygit" },
+            { "<leader>gg", function() Snacks.lazygit() end,                 desc = "Open Lazygit" },
+            { "]r",         function() Snacks.words.jump(vim.v.count1) end,  desc = "Next LSP Reference", mode = { "n", "t" } },
+            { "[r",         function() Snacks.words.jump(-vim.v.count1) end, desc = "Prev LSP Reference", mode = { "n", "t" } },
         }
-    }
+    },
 }
