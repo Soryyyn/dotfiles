@@ -131,9 +131,9 @@ return {
             words = { enabled = true },
         },
         keys = {
-            { "<leader>gg", function() Snacks.lazygit() end,                 desc = "Open Lazygit" },
-            { "]r",         function() Snacks.words.jump(vim.v.count1) end,  desc = "Next LSP Reference", mode = { "n", "t" } },
-            { "[r",         function() Snacks.words.jump(-vim.v.count1) end, desc = "Prev LSP Reference", mode = { "n", "t" } },
+            { "<leader>g", function() Snacks.lazygit() end,                 desc = "Open Lazygit" },
+            { "]r",        function() Snacks.words.jump(vim.v.count1) end,  desc = "Next LSP Reference", mode = { "n", "t" } },
+            { "[r",        function() Snacks.words.jump(-vim.v.count1) end, desc = "Prev LSP Reference", mode = { "n", "t" } },
         }
     },
 }
