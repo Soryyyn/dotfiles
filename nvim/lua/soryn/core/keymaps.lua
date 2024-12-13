@@ -71,11 +71,11 @@ km.set("n", "<leader>q", function()
     require("quicker").toggle()
 end, { desc = "Toggle quickfix" })
 
--- search & replace
-km.set("v", "<leader>r", "<CMD>SearchReplaceSingleBufferVisualSelection<CR>", { desc = "Replace selection" })
-km.set("n", "<leader>rr", "<CMD>SearchReplaceSingleBufferOpen<CR>", { desc = "Search/replace menu" })
-km.set("n", "<leader>rw", "<CMD>SearchReplaceSingleBufferCWord<CR>", { desc = "Replace current word" })
-km.set("n", "<leader>rW", "<CMD>SearchReplaceSingleBufferCWORD<CR>", { desc = "Replace current WORD" })
+-- -- search & replace
+-- km.set("v", "<leader>r", "<CMD>SearchReplaceSingleBufferVisualSelection<CR>", { desc = "Replace selection" })
+-- km.set("n", "<leader>rr", "<CMD>SearchReplaceSingleBufferOpen<CR>", { desc = "Search/replace menu" })
+-- km.set("n", "<leader>rw", "<CMD>SearchReplaceSingleBufferCWord<CR>", { desc = "Replace current word" })
+-- km.set("n", "<leader>rW", "<CMD>SearchReplaceSingleBufferCWORD<CR>", { desc = "Replace current WORD" })
 
 -- window splitting
 km.set("n", "<leader>w|", "<C-w>v", { desc = "Vertically split window" })
@@ -88,3 +88,9 @@ km.set("n", "<leader>wx", "<C-w>x", { desc = "Swap windows" })
 km.set("n", "<leader>we", "<C-w>=", { desc = "Equally size windows" })
 km.set("n", "<leader>ww", "<C-w>|", { desc = "Max out window width" })
 km.set("n", "<leader>wh", "<C-w>_", { desc = "Max out window height" })
+
+-- Show git blame for current line
+km.set("n", "<leader>gb", "<CMD>Gitsigns blame_line<CR>", { desc = "Blame line" })
+
+-- search & replace
+km.set("n", "<leader>fs", "<CMD>lua require('grug-far').open({ transient = true })<CR>", { desc = "Search" })

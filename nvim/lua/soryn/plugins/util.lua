@@ -91,12 +91,18 @@ return {
             })
         end
     },
+    -- {
+    --     "roobert/search-replace.nvim", -- better search & replace
+    --     event = { "BufReadPre", "BufNewFile" },
+    --     config = function()
+    --         require("search-replace").setup({})
+    --     end,
+    -- },
     {
-        "roobert/search-replace.nvim", -- better search & replace
-        event = { "BufReadPre", "BufNewFile" },
+        "MagicDuck/grug-far.nvim", -- search & replace
         config = function()
-            require("search-replace").setup({})
-        end,
+            require("grug-far").setup({})
+        end
     },
     {
         "chrisgrieser/nvim-early-retirement", -- close buffers if they have been open for too long
@@ -131,9 +137,9 @@ return {
             words = { enabled = true },
         },
         keys = {
-            { "<leader>g", function() Snacks.lazygit() end,                 desc = "Open Lazygit" },
-            { "]r",        function() Snacks.words.jump(vim.v.count1) end,  desc = "Next LSP Reference", mode = { "n", "t" } },
-            { "[r",        function() Snacks.words.jump(-vim.v.count1) end, desc = "Prev LSP Reference", mode = { "n", "t" } },
+            { "<leader>gg", function() Snacks.lazygit() end,                 desc = "Open Lazygit" },
+            { "]r",         function() Snacks.words.jump(vim.v.count1) end,  desc = "Next LSP Reference", mode = { "n", "t" } },
+            { "[r",         function() Snacks.words.jump(-vim.v.count1) end, desc = "Prev LSP Reference", mode = { "n", "t" } },
         }
     },
 }
