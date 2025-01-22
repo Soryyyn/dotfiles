@@ -168,4 +168,11 @@ return {
             })
         end,
     },
+    {
+        "Bekaboo/dropbar.nvim", -- breadcrumbs
+        dependencies = {
+            "nvim-telescope/telescope-fzf-native.nvim",
+            build = "make"
+        },
+    }
 }

@@ -91,7 +91,7 @@ return {
                 },
             })
 
-            vim.cmd("colorscheme catppuccin")
+            -- vim.cmd("colorscheme catppuccin")
         end,
     },
     {
@@ -121,5 +121,8 @@ return {
         dependencies = {
             "rktjmp/lush.nvim"
         },
+        config = function()
+            vim.cmd("colorscheme tokyobones")
+        end
     }
 }
