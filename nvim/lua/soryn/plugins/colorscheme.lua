@@ -124,12 +124,13 @@ return {
         config = function()
             vim.cmd("colorscheme tokyobones")
 
-            -- Update colorscheme to make visually selected text bold
+            -- Some highlight changes.
             vim.api.nvim_create_autocmd({ "ColorScheme", "VimEnter" }, {
                 group = vim.api.nvim_create_augroup("Color", {}),
                 pattern = "*",
                 callback = function()
                     vim.api.nvim_set_hl(0, "Visual", { bg = "#2c4075", bold = true })
+                    vim.api.nvim_set_hl(0, "@type.typescript", { bold = true, italic = true })
                 end
             })
         end
