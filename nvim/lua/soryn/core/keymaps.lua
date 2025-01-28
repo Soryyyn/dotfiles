@@ -25,7 +25,6 @@ km.set("n", "<C-l>", "<C-w>l", { desc = "Move to right window" })
 
 -- telescope bindings
 km.set("n", "<leader>ff", "<CMD>Telescope find_files<CR>", { desc = "Find files in cwd" })
-km.set("n", "<leader>fs", "<CMD>Telescope live_grep_args<CR>", { desc = "Find string in cwd" })
 km.set("n", "<leader>fw", "<CMD>Telescope grep_string<CR>", { desc = "Find string under cursor in cwd" })
 km.set("n", "<leader>fb", "<CMD>Telescope buffers<CR>", { desc = "Find open buffers" })
 km.set("n", "<leader>fp", "<CMD>Telescope pickers<CR>", { desc = "Find previous pickers" })
@@ -48,12 +47,6 @@ km.set("v", ">", ">gv")
 km.set("n", "+", "<C-a>")
 km.set("n", "-", "<C-x>")
 
--- move lines/blocks
-km.set("n", "<M-k>", ":MoveLine -1<CR>", { desc = "Move line up", silent = true, noremap = true })
-km.set("n", "<M-j>", ":MoveLine 1<CR>", { desc = "Move line down", silent = true, noremap = true })
-km.set("v", "<M-k>", ":MoveBlock -1<CR>", { desc = "Move block up", silent = true, noremap = true })
-km.set("v", "<M-j>", ":MoveBlock 1<CR>", { desc = "Move block down", silent = true, noremap = true })
-
 -- diagnostics
 km.set("n", "<leader>dd", "<CMD>Trouble diagnostics toggle<CR>", { desc = "Toggle code diagnostics", silent = true })
 km.set(
@@ -73,8 +66,8 @@ km.set("n", "<leader>q", function()
 end, { desc = "Toggle quickfix" })
 
 -- window splitting
-km.set("n", "<leader>w|", "<C-w>v", { desc = "Vertically split window" })
-km.set("n", "<leader>w-", "<C-w>s", { desc = "Horizontally split window" })
+km.set("n", "<leader>ws", "<C-w>v", { desc = "Vertically split window" })
+km.set("n", "<leader>wS", "<C-w>s", { desc = "Horizontally split window" })
 
 -- swap windows
 km.set("n", "<leader>wx", "<C-w>x", { desc = "Swap windows" })
