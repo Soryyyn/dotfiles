@@ -4,14 +4,6 @@ local chosenShinyOdd = math.random(0, 100)
 
 return {
     {
-        "sindrets/diffview.nvim", -- better diff & merge mode
-        dependencies = {
-            "nvim-tree/nvim-web-devicons",
-        },
-        cmd = "DiffviewOpen",
-        opts = {},
-    },
-    {
         "folke/persistence.nvim", -- session saving & tracking
         event = "BufReadPre",
         opts = {
@@ -91,13 +83,6 @@ return {
             })
         end
     },
-    -- {
-    --     "roobert/search-replace.nvim", -- better search & replace
-    --     event = { "BufReadPre", "BufNewFile" },
-    --     config = function()
-    --         require("search-replace").setup({})
-    --     end,
-    -- },
     {
         "MagicDuck/grug-far.nvim", -- search & replace
         config = function()
