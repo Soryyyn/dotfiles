@@ -267,7 +267,7 @@ return {
 
             vim.keymap.set({ "n", "v" }, "<leader>ca", function()
                 tca.code_action()
-            end, { noremap = true, silent = true })
+            end, { desc = "Show available code actions", noremap = true, silent = true })
 
             tca.setup({
                 backend = "vim"
