@@ -14,10 +14,6 @@ return {
         end,
     },
     {
-        "stevearc/dressing.nvim", -- better ui
-        event = "VeryLazy",
-    },
-    {
         "pnx/lualine-lsp-status", -- show lsp servers in statusline
     },
     {
