@@ -91,7 +91,7 @@ return {
                 },
             })
 
-            -- vim.cmd("colorscheme catppuccin")
+            vim.cmd("colorscheme catppuccin")
         end,
     },
     {
@@ -122,7 +122,7 @@ return {
             "rktjmp/lush.nvim"
         },
         config = function()
-            vim.cmd("colorscheme tokyobones")
+            -- vim.cmd("colorscheme tokyobones")
 
             -- Some highlight changes.
             vim.api.nvim_create_autocmd({ "ColorScheme", "VimEnter" }, {
