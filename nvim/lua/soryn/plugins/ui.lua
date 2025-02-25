@@ -28,8 +28,8 @@ return {
                     component_separators = "",
                     globalstatus = true,
                     section_separators = {
-                        left = "",
-                        right = "",
+                        left = "░",
+                        right = "░",
                     },
                     disabled_filetypes = {
                         statusline = {
@@ -38,29 +38,27 @@ return {
                     },
                 },
                 sections = {
-                    lualine_a = {
+                    lualine_a = { "mode" },
+                    lualine_b = {
+                        "filename",
                         {
-                            "mode",
-                            separator = {
-                                left = "",
-                            },
-                            right_padding = 2,
-                        },
+                            "branch",
+                            seperator = {
+                                right = "░"
+                            }
+                        }
                     },
-                    lualine_b = { "filename", "branch" },
                     lualine_c = { "diagnostics" },
-                    lualine_x = {},
-                    lualine_y = { "lsp-status", "filetype" },
-                    lualine_z = {
-                        "progress",
+                    lualine_x = { "lsp-status" },
+                    lualine_y = {
                         {
-                            "location",
-                            separator = {
-                                right = "",
-                            },
-                            left_padding = 2,
+                            "filetype",
+                            seperator = {
+                                left = "░"
+                            }
                         },
                     },
+                    lualine_z = { "location" },
                 },
             })
         end,

@@ -166,6 +166,11 @@ return {
                         },
                     })
                 end,
+
+                -- For java ls dont setup via lspconfig, because it gets handled via ftplugin.
+                ["jdtls"] = function()
+                    return true
+                end,
             })
 
             vim.api.nvim_exec_autocmds("FileType", {})
@@ -190,6 +195,7 @@ return {
                 "cssls",
                 "html",
                 "tailwindcss",
+                "jdtls"
             },
             automatic_installation = true,
         },
@@ -273,5 +279,9 @@ return {
                 backend = "vim"
             })
         end
+    },
+    {
+        "mfussenegger/nvim-jdtls",
+        ft = { "java" }
     }
 }
