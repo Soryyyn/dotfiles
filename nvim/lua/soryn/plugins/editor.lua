@@ -145,7 +145,7 @@ return {
             })
 
             -- jumping from smallest region to largest region
-            vim.keymap.set({ "n", "i" }, "<c-l>", function()
+            vim.keymap.set({ "n", "i" }, "<C-p>", function()
                 require("clasp").wrap('next')
             end)
         end
