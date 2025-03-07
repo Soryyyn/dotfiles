@@ -168,5 +168,9 @@ return {
             "nvim-telescope/telescope-fzf-native.nvim",
             build = "make"
         },
+    },
+    {
+        "OXY2DEV/markview.nvim", -- better markdown render
+        lazy = false
     }
 }
