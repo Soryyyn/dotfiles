@@ -3,7 +3,12 @@ return {
         "NvChad/nvim-colorizer.lua", -- color the background of colors (using fork currently for tailwind colors)
         event = { "BufReadPre", "BufNewFile" },
         config = function()
-            require("colorizer").setup({})
+            require("colorizer").setup({
+                filetypes = {
+                    "!TelescopePrompt",
+                    "!markdown"
+                }
+            })
         end,
     },
     {
