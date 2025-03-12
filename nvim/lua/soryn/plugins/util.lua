@@ -2,6 +2,8 @@ math.randomseed(os.time())
 local shinyChance = math.random(0, 100)
 local chosenShinyOdd = math.random(0, 100)
 
+local os_util = import("../util/os")
+
 return {
     {
         "folke/persistence.nvim", -- session saving & tracking
@@ -106,8 +108,9 @@ return {
                     { section = "startup" },
                     {
                         section = "terminal",
-                        cmd = string.format("pokemon-colorscripts -r%s; sleep 0.5",
-                            shinyChance == chosenShinyOdd and " --shiny" or ""),
+                        cmd = (os_util.get_os() == "linux" and string.format("pokemon-colorscripts -r%s; sleep 0.5",
+                            shinyChance == chosenShinyOdd and " --shiny" or "") or os_util.get_os() == "mac" and string.format("pokemon-colorscripts -r%s; sleep 0.5",
+                            shinyChance == chosenShinyOdd and " --shiny" or "") or "echo no pokemon :("),
                         random = 100,
                         pane = 2,
                         indent = 4,
