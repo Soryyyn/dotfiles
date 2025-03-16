@@ -154,5 +154,14 @@ return {
                 require("clasp").wrap('next')
             end)
         end
+    },
+    {
+        "mawkler/jsx-element.nvim", -- better jsx textobjects
+        dependencies = {
+            'nvim-treesitter/nvim-treesitter',
+            'nvim-treesitter/nvim-treesitter-textobjects',
+        },
+        ft = { 'typescriptreact', 'javascriptreact', 'javascript' },
+        opts = {},
     }
 }
