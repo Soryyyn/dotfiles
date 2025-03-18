@@ -12,7 +12,7 @@ km.set("n", "<C-d>", "<C-d>zz")
 km.set("n", "<C-u>", "<C-u>zz")
 
 -- paste selected text without yanking the replaced text
-km.set("v", "<leader>p", '"_dP', { desc = "Paste text without yanking selected" })
+km.set({ "v", "n" }, "<leader>p", '"_dP', { desc = "Paste text without yanking selected" })
 
 -- change undo bindings to all be on one key
 km.set("n", "<S-u>", "<C-r>", { desc = "Redo" })
