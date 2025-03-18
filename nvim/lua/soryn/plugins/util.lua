@@ -106,7 +106,7 @@ return {
                     { section = "startup" },
                     {
                         section = "terminal",
-                        cmd = string.format("pokemon-go-colorscripts -r%s",
+                        cmd = string.format("pokemon-go-colorscripts -r%s; sleep 1",
                             shinyChance == chosenShinyOdd and " --shiny" or ""),
                         random = 100,
                         pane = 2,
