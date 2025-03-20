@@ -1,7 +1,0 @@
-os:
-  editCommand: "$VISUAL"
-customCommands:
-  - key: "<c-c>"
-    command: "code ."
-    context: "global"
-    description: "Open the current repo in VSCode"
