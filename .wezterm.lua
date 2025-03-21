@@ -24,8 +24,6 @@ if is_windows then
     }
     config.default_domain = 'WSL:Ubuntu'
 
-    config.default_cwd = '\\\\wsl$\\Ubuntu\\home\\soryn'
-
     config.font_size = 12
 
     config.window_background_opacity = 0.9
