@@ -15,6 +15,7 @@ eval "$(fnm env --use-on-cd --shell zsh)"
 
 # Add pokemon script to path
 export PATH="/home/soryn/pokemon-go-colorscripts:$PATH"
+export PATH="/Users/soryn/pokemon-go-colorscripts:$PATH"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
