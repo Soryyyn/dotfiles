@@ -19,9 +19,12 @@ if is_windows then
         {
             name = 'WSL:Ubuntu',
             distribution = 'Ubuntu',
+            default_cwd = "/home/soryn/"
         },
     }
     config.default_domain = 'WSL:Ubuntu'
+
+    config.default_cwd = '\\\\wsl$\\Ubuntu\\home\\soryn'
 
     config.font_size = 12
 
