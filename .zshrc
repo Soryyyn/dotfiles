@@ -1,12 +1,3 @@
-# Better history
-HISTFILE=$HOME/.zhistory
-SAVEHIST=1000
-HISTSIZE=999
-setopt share_history
-setopt hist_expire_dups_first
-setopt hist_ignore_dups
-setopt hist_verify
-
 # Add fnm load to shell
 eval "$(fnm env --use-on-cd --shell zsh)"
 
@@ -21,7 +12,14 @@ export PATH="/Users/soryn/pokemon-go-colorscripts:$PATH"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-eval "$(zoxide init zsh)"
+# Better history
+HISTFILE=$HOME/.zhistory
+SAVEHIST=1000
+HISTSIZE=999
+setopt share_history
+setopt hist_expire_dups_first
+setopt hist_ignore_dups
+setopt hist_verify
 
 # Aliases
 alias n="nvim"
@@ -33,7 +31,10 @@ alias cd="z"
 source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
+# Outside scripts eval
 eval $(thefuck --alias --enable-experimental-instant-mode)
 eval $(thefuck --alias fuck)
+
+eval "$(zoxide init zsh)"
 
 eval "$(starship init zsh)"
