@@ -28,8 +28,8 @@ return {
                     component_separators = "",
                     globalstatus = true,
                     section_separators = {
-                        left = "░",
-                        right = "░",
+                        left = "",
+                        right = "",
                     },
                     disabled_filetypes = {
                         statusline = {
@@ -44,7 +44,7 @@ return {
                         {
                             "branch",
                             seperator = {
-                                right = "░"
+                                right = "",
                             }
                         }
                     },
@@ -54,7 +54,7 @@ return {
                         {
                             "filetype",
                             seperator = {
-                                left = "░"
+                                left = "",
                             }
                         },
                     },
