@@ -39,7 +39,6 @@ return {
                 }),
                 sources = cmp.config.sources({
                     { name = "nvim_lsp" },
-                    { name = "ecolog" },
                     { name = "luasnip" },
                     { name = "path" },
                 }, {
@@ -60,19 +59,4 @@ return {
             require("cmp").setup(opts)
         end,
     },
-    {
-        "philosofonusus/ecolog.nvim", -- environment variables
-        dependencies = {
-            "hrsh7th/nvim-cmp"
-        },
-        enabled = true,
-        lazy = false,
-        opts = {
-            integrations = {
-                nvim_cmp = true
-            },
-            types = true,
-            preferred_environment = "development"
-        }
-    }
 }
