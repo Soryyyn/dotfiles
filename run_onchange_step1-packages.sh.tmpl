@@ -1,7 +1,6 @@
 #!/bin/bash
 
 # .bootstrap/Brewfile hash: {{ include "dot_bootstrap/Brewfile" | sha256sum }}
-printf "\033[0;34mStep 1: Install all/new brew packages/cask"
-printf ""
+printf "\033[0;34mStep 1: Install all/new brew packages/cask\033[0m\n\n"
 
 bash {{ joinPath .chezmoi.sourceDir "dot_bootstrap/install-packages.sh.tmpl" }}

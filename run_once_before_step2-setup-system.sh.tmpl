@@ -1,0 +1,24 @@
+#!/bin/bash
+{{ if (eq .chezmoi.os "darwin") -}}
+
+# Dock
+printf "\033[0;34mSetup dock\033[0m\n"
+
+defaults write com.apple.dock orientation -string "right"
+defaults write com.apple.dock "tilesize" -int 43
+defaults write com.apple.dock minimize-to-application -bool false
+defaults write com.apple.dock launchanim -bool true
+defaults write com.apple.dock show-process-indicators -bool true
+defaults write com.apple.dock show-recents -bool false
+defaults write com.apple.dock persistent-others -array
+defaults write com.apple.dock persistent-apps -array\
+ '<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/Zen Browser.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>'\
+ '<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/Wezterm.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>'\
+ '<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/Spotify.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>' \
+ '<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/System/Applications/System Settings.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>' \
+
+killall Dock
+
+printf "\033[0;34mDock is restarting...\033[0m\n\n"
+
+{{ end -}}
