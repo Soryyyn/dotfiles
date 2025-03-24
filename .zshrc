@@ -32,9 +32,5 @@ source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.z
 source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
 # Outside scripts eval
-eval $(thefuck --alias --enable-experimental-instant-mode)
-eval $(thefuck --alias fuck)
-
 eval "$(zoxide init zsh)"
-
 eval "$(starship init zsh)"
