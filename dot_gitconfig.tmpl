@@ -1,0 +1,14 @@
+[user]
+	email = soryn.baechli@gmail.com
+	name = Soryn Bächli
+    {{- if (eq .chezmoi.os "darwin") }}
+    signingkey = /Users/soryn/.ssh/id_ed25519.pub
+    {{ else if (eq .chezmoi.os "linux") }}
+    signingkey = /home/soryn/.ssh/id_ed25519.pub
+    {{- end }}
+[commit]
+	gpgsign = true
+[gpg]
+	format = ssh
+[pull]
+	rebase = true
