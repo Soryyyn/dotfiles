@@ -11,7 +11,9 @@ brew "starship"
 brew "zoxide"
 brew "zsh"
 
+# Will only get installed on macos
 cask "font-jetbrains-mono-nerd-font"
+cask "nikitabobko/tap/aerospace"
 cask "rectangle"
 cask "spotify"
 cask "wezterm"
