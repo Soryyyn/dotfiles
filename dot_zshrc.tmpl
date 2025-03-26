@@ -17,6 +17,11 @@ export PATH="/Users/soryn/pokemon-go-colorscripts:$PATH"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
+{{ if (eq .chezmoi.os "darwin") -}}
+# Spicetify
+export PATH=$PATH:/Users/soryn/.spicetify
+{{- end }}
+
 # Better history
 HISTFILE=$HOME/.zhistory
 SAVEHIST=1000
