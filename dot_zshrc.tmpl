@@ -1,3 +1,8 @@
+{{ if (eq .chezmoi.os "linux") -}}
+# Load (linux)brew
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+{{- end }}
+
 # Add fnm load to shell
 eval "$(fnm env --use-on-cd --shell zsh)"
 
